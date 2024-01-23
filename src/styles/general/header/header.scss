@@ -1,0 +1,79 @@
+.header {
+
+    &__logo {
+        padding: 9px 0;
+    }
+
+    .logo {
+        font-size: 35px;
+        font-family: "Dancing Script", cursive;
+        border-bottom: 1px solid #fff;
+    } 
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: black;
+        position: fixed;
+        left: 0;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+
+        li {
+            padding: 0 30px;
+
+            a {
+                font-size: 20px;
+                color: white;
+                transition: all 0.5s ease;
+                border-bottom: 1px solid transparent;
+
+                &:hover {
+                    border-bottom: 1px solid #fff;
+                }
+            }
+        }
+    }
+
+    .cart {
+        background-color: black;
+        border: 1px solid white;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+
+        &:hover {
+            background-color: rgb(105, 105, 105);
+        }
+
+        &__button {
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            transition: all 0.5s ease;
+        }
+
+        &__image {
+            width: 30px;
+            margin-right: 10px;
+
+            img {
+                max-width: 100%;
+                display: block;
+            }
+        }
+
+        &__title {
+
+            span {
+                color: #fff;
+                font-size: 18px;
+            }
+        }
+    }
+}

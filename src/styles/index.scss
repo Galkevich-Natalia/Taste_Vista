@@ -1,3 +1,5 @@
 @import "./general/reset.scss";
-
-@import "./pages/main/main.scss"
+@import "./general/common.scss";
+@import "./general/header/header.scss";
+@import "./general/footer/footer.scss";
+@import "./pages/main/main.scss";
