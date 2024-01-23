@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/index.scss">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans&display=swap" rel="stylesheet">
 
     <title>Taste Vista</title>
 </head>
@@ -33,21 +31,38 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="header__btn">
-                    <button>Order</button>
+                <div class="cart">
+                    <div class="cart__container">
+                        <a class="cart__button" href="#">
+                            <div class="cart__image">
+                                <img src="./src/assets/icons/basket.png">
+                            </div>
+                            <div class="cart__title">
+                                <span>Order</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>    
-                </div>
             </div>
         </div>
     </header>
     <section class="banner">
         <section class="major">
             <div class="container">
-                <div class="background-image background-image_main"></div>
-                <div class="major_heading">
-                    <h3>Welcome!</h3>
-                    <h1>Taste Vista</h1>
-                    <h2>RESTAURANT</h2>
+                <div class="major__wrapper">
+                    <div class="background-image background-image_main"></div>
+                        <div class="major_heading">
+                            <div class="major__greeting">
+                                <h3>Welcome!</h3>
+                            </div>
+                            <div class="major__title">
+                                <h1>Taste Vista</h1>
+                            </div>
+                            <div class="major__subTitle">
+                                <h2>RESTAURANT</h2>
+                            </div>
+                        </div>
+                    </div>    
                 </div>
             </div>
         </section>
@@ -83,7 +98,7 @@
                     </div>
                 </div>
                 <div class="specificity__image">
-                    <img src="./src/assets/images/restaurant.jpg">
+                    <img src="./src/assets/images/restaurant.jpg" alt="restaurant">
                 </div>
             </div>
         </div>
@@ -92,7 +107,7 @@
         <div class="container">
             <div class="contacts__wrapper">
                 <div class="contacts__image">
-                    <img src="./src/assets/images/resturant_2.jpg">
+                    <img src="./src/assets/images/resturant_2.jpg"  alt="restaurant 2">
                 </div>
                 <div class="contacts__content">    
                     <div class="contacts__title">
@@ -122,7 +137,7 @@
                     </div>
                 </div>
                 <div class="staff__image">
-                    <img src="./src/assets/images/chef.png">
+                    <img src="./src/assets/images/chef.png" alt="chef">
                 </div>
             </div>
         </div>
