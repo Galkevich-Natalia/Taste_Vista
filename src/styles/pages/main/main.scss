@@ -1,0 +1,213 @@
+.banner {
+    height: 100vh;
+
+    .background-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+        top: 58px;
+    
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    
+        &_main   {
+            background-image: url(https://kartinki.pics/uploads/posts/2021-04/1617313820_4-p-foni-dlya-menyu-5.jpg) !important;
+        }
+    }
+    
+    .major {
+
+        &__wrapper {
+            padding: 270px 20px;
+        }
+
+        &__greeting {
+            h3 {
+                font-size: 50px;
+            }
+        }
+
+        &__title {
+            padding: 30px 0;
+
+            h1 {
+                font-size: 100px;
+                font-family: 'Dancing Script', cursive;
+            }
+        }
+
+        &__subTitle {
+            h2 {
+                font-size: 30px;
+            }
+        } 
+    
+        .major_heading {
+            text-align: center;
+        }
+    }
+}
+
+.history {
+    background-color: #1c1b1e;
+
+    &__wrapper {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    &__title {
+        padding: 50px 0;
+
+        h2 {
+            font-size: 45px;
+            font-family: "Dancing Script", cursive;
+        }
+    }
+
+    &__content {
+        padding: 30px 0;
+
+        p {
+            font-size: 20px;
+            word-spacing: 10px;
+        }
+    }
+}
+
+.specificity {
+    background-color: #1c1b1e;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    &__content {
+        max-width: 45%;
+        text-align: center;
+        padding-right: 20px;
+    }
+    
+    &__title {
+
+        h3 {
+            font-size: 35px;
+            font-family: "Dancing Script", cursive;
+        }
+
+        h2 {
+            font-size: 35px;
+            padding: 10px 0;
+            font-family: "Dancing Script", cursive;
+        }
+    }
+
+    &__text {
+        font-size: 20px;
+        padding: 30px 0;
+        word-spacing: 10px;
+    }
+
+    &__image {
+        max-width: 500px;
+        max-height: 500px;
+
+        img {
+            width: 100%;
+        }
+    }
+}    
+
+.contacts {
+    background-color: #1c1b1e;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    &__image {
+        max-width: 500px;
+        max-height: 500px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        max-width: 45%;
+        text-align: center;
+        padding-left: 20px;
+    }
+
+    &__title {
+        font-size: 30px;
+        font-family: "Dancing Script", cursive;
+    }
+
+    &__text {
+        font-size: 20px;
+        padding: 30px 0;
+        word-spacing: 10px;
+    }
+}
+
+.staff {
+    background-color: #1c1b1e;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    &__content {
+        max-width: 45%;
+        text-align: center;
+        padding-right: 20px;
+    }
+
+    &__title {
+
+        h3 {
+            font-size: 35px;
+            font-family: "Dancing Script", cursive;
+        }
+
+        h2 {
+            padding: 10px 0;
+            font-family: "Dancing Script", cursive;
+        }
+    }
+
+    &__text {
+        font-size: 20px;
+        padding: 30px 0;
+        word-spacing: 10px;
+    }
+
+    &__image {
+        max-width: 400px;
+        max-height: 400px;
+
+        img {
+            width: 100%;
+        }
+    }
+}

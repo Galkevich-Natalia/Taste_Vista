@@ -4,9 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/index.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans&display=swap" rel="stylesheet">
+
     <title>Taste Vista</title>
 </head>
 <body>
-    <h1>Taste Vista</h1>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__logo">
+                    <span class="logo">Taste Vista</span>
+                </div>
+                <nav class="header__nav">
+                    <ul class="header__menu">
+                        <li>
+                            <a href="#">Main</a>
+                        </li>
+                        <li>
+                            <a href="#">Menu</a>
+                        </li>
+                        <li>
+                            <a href="#">About us</a>
+                        </li>
+                        <li>
+                            <a href="#">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="cart">
+                    <div class="cart__container">
+                        <a class="cart__button" href="#">
+                            <div class="cart__image">
+                                <img src="./src/assets/icons/basket.png">
+                            </div>
+                            <div class="cart__title">
+                                <span>Order</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <section class="major">
+            <div class="container">
+                <div class="major__wrapper">
+                    <div class="background-image background-image_main"></div>
+                        <div class="major_heading">
+                            <div class="major__greeting">
+                                <h3>Welcome!</h3>
+                            </div>
+                            <div class="major__title">
+                                <h1>Taste Vista</h1>
+                            </div>
+                            <div class="major__subTitle">
+                                <h2>RESTAURANT</h2>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="history">
+        <div class="container">
+            <div class="history__wrapper">
+                <div class="history__title">
+                    <h2>Our history</h2>
+                </div>
+                <div class="history__content">
+                    <p>TASTE VISTA is a place to unwind, offering everything you need to relax after a day of work, 
+                        spend an evening with friends, family, or celebrate any occasion.Style and comfort define this place, 
+                        where everyone can find a piece of themselves and will want to come back again. 
+                        We have a diverse menu featuring both classic dishes and exquisite delicacies. 
+                        We treat our guests with care and help them bring their brightest ideas to life when organizing family or corporate events!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="specificity">
+        <div class="container">
+            <div class="specificity__wrapper">
+                <div class="specificity__content">
+                    <div class="specificity__title">
+                        <h3>Features of the</h3>
+                        <h2>RESTAURANT</h2>
+                    </div>
+                    <div class="specificity__text">
+                        <p>Every good establishment should have its own unique features.
+                            Those that set it apart from hundreds of other cafes and restaurants and make guests come back again and again.
+                            Every Friday and Saturday in the main hall, live music starts at 8:00 PM.</p>
+                    </div>
+                </div>
+                <div class="specificity__image">
+                    <img src="./src/assets/images/restaurant.jpg" alt="restaurant">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts__wrapper">
+                <div class="contacts__image">
+                    <img src="./src/assets/images/resturant_2.jpg"  alt="restaurant 2">
+                </div>
+                <div class="contacts__content">    
+                    <div class="contacts__title">
+                        <h2>Our contacts</h2>
+                    </div>
+                    <div class="contacts__text">
+                        <p>Find out where we are and come to us!
+                            You can book a table online. Leave a request, and we will contact you!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="staff">
+        <div class="container">
+            <div class="staff__wrapper">
+                <div class="staff__content">
+                    <div class="staff__title">
+                        <h3>Chef</h3>
+                        <h2>VADIM TURNOVSKY</h2>
+                    </div>
+                    <div class="staff__text">
+                        <p>
+                            Work experience: 24 years, with over 20 years in the position of head chef 
+                            at leading restaurants in Minsk. He has been working at Wood&Fire since 2016.
+                            Vadim has undergone training and internships in France, Italy, and Russia (Moscow).</p>
+                    </div>
+                </div>
+                <div class="staff__image">
+                    <img src="./src/assets/images/chef.png" alt="chef">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <nav class="footer__nav">
+                    <ul class="footer__menu">
+                        <li>
+                            <a href="#">TASTE VISTA</a>
+                        </li>
+                        <li>
+                            <a href="#">ADRESS</a>
+                        </li>
+                        <li>
+                            <a href="#">CONTACTS</a>
+                        </li>
+                        <li>
+                            <a href="#">WORK TIME</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="footer__social">
+                    <ul class="social__list">
+                        <li class="social__icon">
+                            <a href="https://www.facebook.com/">
+                                <img src="./src/assets/icons/facebook.png">
+                            </a>
+                        </li>
+                        <li class="social__icon">
+                            <a href="https://www.instagram.com/">
+                                <img src="./src/assets/icons/instagram.png">
+                            </a>
+                        </li>
+                        <li class="social__icon">
+                            <a href="https://www.twitter.com/">
+                                <img src="./src/assets/icons/twitter.png">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer__copyright">
+                    <span class="copyright">© 2024 Taste Vista. All Rights Reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
