@@ -45,6 +45,7 @@
             a {
                 display: block;
                 transition: all 0.5s ease;
+                border-radius: 15px;
 
                 &:hover {
                     box-shadow: 0 0 40px rgba(255, 253, 253, 0.8);
