@@ -1,0 +1,34 @@
+.workingHours {
+    background-color: #1c1b1e;
+
+    &__wrapper {
+        padding: 70px 20px;
+        text-align: center;
+    }
+
+    &__heading{
+        padding: 30px 0;
+
+        h2 {
+            font-size: 55px;
+            font-family: "Dancing Script", cursive;
+        }
+    }
+
+    &__text {
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    &__time {
+
+        margin: 40px 0;
+
+        li {
+            font-size: 20px;
+            word-spacing: 10px; 
+        }
+    }
+}
