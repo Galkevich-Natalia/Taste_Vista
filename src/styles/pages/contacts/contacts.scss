@@ -16,10 +16,10 @@
     }
 
     &__text {
+        line-height: 32px;
 
         p {
             font-size: 20px;
-            word-spacing: 10px;
         }
     }
 
@@ -29,13 +29,6 @@
         h3 {
             font-size: 40px;
             font-family: "Dancing Script", cursive;
-        }
-    }
-
-    &__list {
-        li {
-            font-size: 20px;
-            word-spacing: 10px;
         }
     }
 }

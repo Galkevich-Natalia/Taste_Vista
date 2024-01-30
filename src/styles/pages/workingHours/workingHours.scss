@@ -19,16 +19,25 @@
 
         p {
             font-size: 20px;
+            line-height: 32px;
         }
     }
 
     &__time {
-
         margin: 40px 0;
+    }
 
+    &__title {
+        padding-bottom: 20px;
+        
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+    &__list {
         li {
             font-size: 20px;
-            word-spacing: 10px; 
         }
     }
 }
