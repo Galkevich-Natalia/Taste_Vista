@@ -4,6 +4,7 @@
     &__wrapper {
         padding: 70px 20px;
         text-align: center;
+        min-height: 80vh;
     }
 
     &__heading{
@@ -16,6 +17,7 @@
     }
 
     &__text {
+        line-height: 50px;
 
         p {
             font-size: 22px;
