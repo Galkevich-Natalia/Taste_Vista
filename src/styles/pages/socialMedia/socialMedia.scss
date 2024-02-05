@@ -1,0 +1,55 @@
+.socialMedia {
+    background-color: #1c1b1e;
+
+    &__wrapper {
+        padding: 70px 20px;
+        text-align: center;
+        min-height: 80vh;
+    }
+
+    &__heading{
+        padding: 70px 0 50px 0;
+
+        h2 {
+            font-size: 55px;
+            font-family: "Dancing Script", cursive;
+        }
+    }
+
+    &__text {
+        line-height: 50px;
+
+        p {
+            font-size: 22px;
+        }
+    }
+
+    &__menu {
+        margin: 100px 0 20px 0;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__icon {
+
+        margin: 0 30px;
+
+        a {
+            display: block;
+            transition: all 0.5s ease;
+            border-radius: 15px;
+
+            &:hover {
+                box-shadow: 0 0 40px rgba(255, 253, 253, 0.8);
+            }
+
+            img {
+                width: 40px;
+            }
+        }
+    }    
+}
