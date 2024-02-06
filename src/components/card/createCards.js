@@ -23,38 +23,63 @@ function crtCardContainer(data) {
 function crtCardWrapper(data) {
     const cardWrapper = document.createElement('div');
     cardWrapper.classList.add('card__wrapper');
-    cardWrapper.append(crtCardContImage(), crtCardContent(data));
+    cardWrapper.append(crtCardContImage(data), crtCardContent(data));
 
     return cardWrapper;
 }
 
-function crtCardContImage() {
+function crtCardContImage(data) {
     const cardContImage = document.createElement('div');
     cardContImage.classList.add('card__image');
-    // cardContImage.append(crtCardImg());
+    cardContImage.append(crtCardImg(data));
 
     return cardContImage;
 }
 
-// function crtCardImg() {
-//     const cardImg = document.createElement('img');
-//     cardImg.classList.add('card__img');
+function crtCardImg(value) {
+    const cardImg = document.createElement('img');
+    cardImg.classList.add('img');
+    cardImg.src = value.image;
     
-//     return cardImg;
-// }
+    return cardImg;
+}
 
 function crtCardContent(data) {
     const cardContent = document.createElement('div');
     cardContent.classList.add('card__content');
-    cardContent.append(crtCardName(data), crtCardIngredients(), crtCardFooter(data));
+    cardContent.append(crtCardName(data), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
 
     return cardContent;
 }
 
+// function crtCardName(data) {
+//     const container = document.createElement('div');
+//     container.classList.add('card__name');
+//     container.append(crtTextName(data), crtTextSize(data));
+
+//     return container;
+// }
+
+// function crtTextName(value) {
+//     const textName = document.createElement('span');
+//     textName.classList.add('card__text');
+//     textName.textContent = value.name;
+
+//     return textName;
+// }
+
+// function crtTextSize(value) {
+//     const textSize = document.createElement('span');
+//     textSize.classList.add('card__size');
+//     textSize.textContent = value.size;
+
+//     return textSize;
+// }
+
 function crtCardName(data) {
     const container = document.createElement('div');
     container.classList.add('card__name');
-    container.append(crtTextName(data), crtTextSize(data));
+    container.append(crtTextName(data));
 
     return container;
 }
@@ -67,6 +92,14 @@ function crtTextName(value) {
     return textName;
 }
 
+function crtCardSize(data) {
+    const container = document.createElement('div');
+    container.classList.add('card__size');
+    container.append(crtTextSize(data));
+
+    return container;
+}
+
 function crtTextSize(value) {
     const textSize = document.createElement('span');
     textSize.classList.add('card__size');
@@ -75,11 +108,12 @@ function crtTextSize(value) {
     return textSize;
 }
 
-function crtCardIngredients() {
+function crtCardIngredients(value) {
     const cardIngredients = document.createElement('div');
     cardIngredients.classList.add('card__ingredients');
     
     const cardIngredientsText = document.createElement('p');
+    cardIngredientsText.textContent = value.ingredients;
 
     cardIngredients.append(cardIngredientsText);
 

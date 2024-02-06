@@ -1,3 +1,10 @@
+.cards {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .card {
     background-color: #1c1b1e;
     
@@ -6,7 +13,7 @@
     }
 
     &__wrapper {
-        max-width: 24%;
+        max-width: 80%;
         margin: 0 auto;
         padding: 20px;
         border: 2px solid white;
@@ -21,23 +28,26 @@
         padding: 15px 0;
 
         span {
-            font-size: 13px;
+            font-size: 17px;
         }
     }
 
     &__ingredients {
+
+        padding: 15px 0;
+
         p {
             font-size: 15px;
         }
     }
 
     &__image {
-        width: 194px;
-        height: 194px;
+        max-width: 150px;
         margin: 0 auto;
 
         img {
             width: 100%;
+            
         }
     }
 
@@ -50,7 +60,12 @@
     &__btn {
         border: 1px solid white;
         border-radius: 8px;
-        width: 28px;
+        width: 50px;
+        cursor: poiner;
+
+        &:hover {
+            background-color: #003cd4;
+        }
 
         button {
             color: white;
