@@ -1,3 +1,5 @@
+import { getFormatCurrency } from "../../utils/formatCurrency";
+
 const cardsContainer = document.querySelector('.cards__container');
 
 export function addMenu(data) {
@@ -40,6 +42,7 @@ function crtCardImg(value) {
     const cardImg = document.createElement('img');
     cardImg.classList.add('img');
     cardImg.src = value.image;
+    cardImg.alt = value.name;
     
     return cardImg;
 }
@@ -51,30 +54,6 @@ function crtCardContent(data) {
 
     return cardContent;
 }
-
-// function crtCardName(data) {
-//     const container = document.createElement('div');
-//     container.classList.add('card__name');
-//     container.append(crtTextName(data), crtTextSize(data));
-
-//     return container;
-// }
-
-// function crtTextName(value) {
-//     const textName = document.createElement('span');
-//     textName.classList.add('card__text');
-//     textName.textContent = value.name;
-
-//     return textName;
-// }
-
-// function crtTextSize(value) {
-//     const textSize = document.createElement('span');
-//     textSize.classList.add('card__size');
-//     textSize.textContent = value.size;
-
-//     return textSize;
-// }
 
 function crtCardName(data) {
     const container = document.createElement('div');
@@ -112,10 +91,11 @@ function crtCardIngredients(value) {
     const cardIngredients = document.createElement('div');
     cardIngredients.classList.add('card__ingredients');
     
-    const cardIngredientsText = document.createElement('p');
-    cardIngredientsText.textContent = value.ingredients;
-
-    cardIngredients.append(cardIngredientsText);
+    if(value.ingredients && value.ingredients.length > 0) {
+        const cardIngredientsText = document.createElement('span');
+        cardIngredientsText.textContent = value.ingredients.join(', ') +  ".";
+        cardIngredients.append(cardIngredientsText);
+    }
 
     return cardIngredients;
 }
@@ -139,7 +119,7 @@ function crtCardContainerCost(data) {
 function crtCardCost(value) {
     const cardCost = document.createElement('p');
     cardCost.classList.add('card__cost-price');
-    cardCost.textContent = value.price;
+    cardCost.textContent = getFormatCurrency(value.price);
    
    return cardCost;
 }
