@@ -16,8 +16,9 @@
 
     &__wrapper {
         min-height: 60vh;
-        padding: 50px 20px;
+        padding: 50px 20px 30px 20px;
         border: 2px solid white;
+        border-radius: 50px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -35,10 +36,10 @@
 
     &__name {
 
-        padding: 15px 0;
+        padding: 25px 0 15px 0;
 
         span {
-            font-size: 17px;
+            font-size: 20px;
         }
     }
 
@@ -59,23 +60,30 @@
     }
 
     &__footer {
-        padding: 15px 0;
+        padding: 30px 0 15px 0;
         display: flex;
         justify-content: space-around;
     }
 
-    &__btn {
-        border: 1px solid white;
-        border-radius: 8px;
-        width: 100px;
+    &__cost {
+        font-size: 20px;
+    }
 
-        &:hover {
-            cursor: pointer;
-            background-color: #003cd4;
-        }
+    &__btn {
         
         button {
+            width: 50px;
+            background-color: #cf3432;
+            border: 1px solid white;
+            border-radius: 8px;
+            font-size: 20px;
             color: white;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
         }
     }
 }
