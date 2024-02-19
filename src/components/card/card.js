@@ -2,18 +2,26 @@ import { getMenu } from "../../api/getApi";
 import { addMenu } from "./createCards";
 
 export async function getCardsData(value) {
-    try {
-      const data = await getMenu();
 
-      const nameCategory = value.toLowerCase();
-      const arrCardsByCategory = data[0][nameCategory];
+  try {
+    const data = await getMenu();
 
-      arrCardsByCategory.forEach((obj) => addMenu(obj));
+    const nameCategory = value.toLowerCase();
+    const arrCardsByCategory = data[0][nameCategory];
 
-    } catch (e) {
-      console.error("error", e);
-      throw e;
-    }
+    deleteCardsByCategory();
+    arrCardsByCategory.forEach((obj) => addMenu(obj));
+
+  } catch (e) {
+    console.error("error", e);
+    throw e;
+  }
+}
+
+function deleteCardsByCategory() {
+  
+  const cards = document.querySelectorAll(".card");
+  cards.forEach(item => item.remove());
 }
 
 function getMenuByCategory() {
@@ -27,6 +35,6 @@ function selectedCategory(event) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  getCardsData();
+  getCardsData("salads");
   getMenuByCategory();
 });
