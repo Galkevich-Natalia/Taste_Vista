@@ -50,10 +50,16 @@
         flex-direction: column;
         justify-content: space-between;
         text-align: center;
+        transition: transform 0.3s ease; 
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
     }
 
     &__image {
-        max-width: 200px;
+        max-width: 230px;
         margin: 0 auto;
 
         img {
@@ -67,6 +73,14 @@
 
         span {
             font-size: 20px;
+            display: block;
+            height: 3.6em;
+            line-height: 1.8em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
         }
     }
 

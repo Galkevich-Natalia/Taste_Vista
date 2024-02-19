@@ -35,6 +35,6 @@ function selectedCategory(event) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  getCardsData("salads");
+  getCardsData("snacks");
   getMenuByCategory();
 });
