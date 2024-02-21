@@ -1,0 +1,644 @@
+[
+    {
+      "snacks": [
+        {
+          "id": 1,
+          "type": "cold snacks",
+          "image": "https://imgur.com/2yRF5U3.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Smorrebrod from Riga sprats",
+          "size": "130g",
+          "ingredients": null,
+          "description": null,
+          "price": 3.06
+        },
+        {
+          "id": 2,
+          "type": "cold snacks",
+          "image": "https://imgur.com/Blfxgax.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Tuna tartare with raisins and pine nuts",
+          "size": "150g",
+          "ingredients": null,
+          "description": null,
+          "price": 8.86
+        },
+        {
+          "id": 3,
+          "type": "cold snacks",
+          "image": "https://imgur.com/dAnILTS.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Beef tartare with cheese sauce",
+          "size": "180g",
+          "ingredients": null,
+          "description": null,
+          "price": 11
+        },
+        {
+          "id": 4,
+          "type": "cold snacks",
+          "image": "https://imgur.com/9cRw4Ia.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Vitello tonnato of beef",
+          "size": "190g",
+          "ingredients": [
+            "Beef",
+            "sauce"
+          ],
+          "description": [
+            "Beef with sauce based on mayonnaise, canned tuna, capers, anchovies, dried cherry tomatoes, thyme and fresh basil."
+          ],
+          "price": 10.7
+        },
+        {
+          "id": 5,
+          "type": "cold snacks",
+          "image": "https://imgur.com/w4cpDwK.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "An innocent plate",
+          "size": "440g",
+          "ingredients": [
+            "Salted pork sandwich",
+            "stewed turkey fillet",
+            "Gorgonzola cheese",
+            "local cheese aged from cow's milk",
+            "pecorino cheese from sheep's milk",
+            "curd cheese from cow's milk",
+            "pickled salmon fish species",
+            "red caviar",
+            "grissini with sesame seeds",
+            "wheat tortilla with rosemary and salt",
+            "honey",
+            "almond nut",
+            "hazelnut",
+            "giant olives greens",
+            "Tajas olives",
+            "dried tomatoes",
+            "fresh strawberries",
+            "fresh herbs"
+          ],
+          "description": [
+            "Salted pork sandwich, stewed turkey fillet, Gorgonzola cheese, local cheese aged from cow's milk, pecorino cheese from sheep's milk, curd cheese from cow's milk, pickled salmon fish species, red caviar, grissini with sesame seeds, wheat tortilla with rosemary and salt, honey, almond nut, hazelnut, giant olives greens, Tajas olives, dried tomatoes, fresh strawberries, fresh herbs."
+          ],
+          "price": 21.09
+        },
+        {
+          "id": 6,
+          "type": "cold snacks",
+          "image": "https://imgur.com/V6ZOgLx.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Cabbage steak with truffle sauce",
+          "size": "320g",
+          "ingredients": [
+            "Grilled white cabbage",
+            "sauce"
+          ],
+          "description": "White cabbage, grilled. Served with cream-based sauce with truffle paste, garlic, olive oil with truffle, dill oil, sheep's milk pecorino cheese and microgreens.",
+          "price": 8.25
+        },
+        {
+          "id": 7,
+          "type": "cold snacks",
+          "image": "https://imgur.com/0PwQX4Y.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Bretta with parma and strawberries",
+          "size": "125g",
+          "ingredients": [
+            "Crispy wheat baguette",
+            "prosciutto crudo",
+            "mascarpone cheese",
+            "arugula salad",
+            "fresh strawberries",
+            "olive oil"
+          ],
+          "description": "Crispy wheat baguette with prosciutto crudo, mascarpone cheese, arugula salad, fresh strawberries and olive oil.",
+          "price": 8.25
+        },
+        {
+          "id": 8,
+          "type": "cold snacks",
+          "image": "https://imgur.com/9nlTHi3.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Sweet potato fries with mango sauce with coconut",
+          "size": "190g",
+          "ingredients": [
+            "Sweet potato",
+            "rice flour",
+            "starch",
+            "paprika",
+            "onion",
+            "garlic",
+            "turmeric",
+            "sauce"
+          ],
+          "description": "Sweet potato, rice flour, starch, paprika, onion, garlic, turmeric. It is served with a sauce based on mayonnaise, coconut milk, sweet chili sauce and mango puree.",
+          "price": 7.03
+        }
+      ],
+      "salads": [
+        {
+          "id": 9,
+          "type": "salads",
+          "image": "https://imgur.com/gNTvvnO.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Salad \"Multicolored\"",
+          "size": "410g",
+          "ingredients": [
+            "Persimmon",
+            "tomato",
+            "radish",
+            "fresh cucumber",
+            "dried tomatoes",
+            "Tajik olives",
+            "green onion",
+            "cow's milk cheese",
+            "fresh mint",
+            "fresh basil",
+            "sauce"
+          ],
+          "description": "Persimmon, tomato, radish, fresh cucumber, dried tomatoes, Tajik olives, green onion, cow's milk cheese, fresh mint, fresh basil, seasoned with honey sauce based on olive and vegetable oil, citrus juice and mustard with peanuts, cedar nuts and microgreens.",
+          "price": 10.39
+        },
+        {
+          "id": 10,
+          "type": "salads",
+          "image": "https://imgur.com/ShnADFD.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Our \"Olivier\" with smoked salmon",
+          "size": "340g",
+          "ingredients": [
+            "Smoked salmon",
+            "red caviar",
+            "cherry tomatoes",
+            "boiled potatoes",
+            "boiled carrots",
+            "fresh cucumber",
+            "gherkins",
+            "green peas",
+            "mayonnaise sauce",
+            "chicken egg",
+            "fresh herbs",
+            "chili filaments"
+          ],
+          "description": "Smoked salmon, red caviar, cherry tomatoes, boiled potatoes and carrots, fresh cucumber, gherkins, green peas, mayonnaise sauce, chicken egg, fresh herbs and chili filaments.",
+          "price": 11.31
+        },
+        {
+          "id": 11,
+          "type": "salads",
+          "image": "https://imgur.com/1Adovys.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Salad with smoked duck and blue cheese",
+          "size": "320g",
+          "ingredients": [
+            "Smoked duck",
+            "green apple",
+            "celery stalk",
+            "celery root",
+            "fresh radish",
+            "spinach salad",
+            "sauce"
+          ],
+          "description": "Smoked duck, green apple, celery stalk, celery root, fresh radish, spinach salad, seasoned with mayonnaise sauce and lemon juice. Served with gorgonzola cheese and glazed walnuts in caramel made of honey, cognac and orange.",
+          "price": 12.84
+        },
+        {
+          "id": 12,
+          "type": "salads",
+          "image": "https://imgur.com/oHkqmZx.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Iceberg salad with shrimp and avocado",
+          "size": "220g",
+          "ingredients": [
+            "King prawn meat",
+            "iceberg lettuce",
+            "fresh cucumber balls",
+            "avocado cream",
+            "chili mayonnaise",
+            "dill mayonnaise"
+          ],
+          "description": "King prawn meat with iceberg lettuce, fresh cucumber balls marinated in yuzu sauce, avocado cream, chili mayonnaise, dill mayonnaise with anchovies, sun-dried tomatoes and aged cheese.",
+          "price": 10.09
+        },
+        {
+          "id": 13,
+          "type": "salads",
+          "image": "https://imgur.com/NEGEEtc.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Tuna tartare with raisins and pine nuts",
+          "size": "365g",
+          "ingredients": [
+            "Iceberg salad",
+            "romaine with boiled poultry",
+            "slices of aged cheese",
+            "mayonnaise sauce",
+            "soft-boiled chicken egg",
+            "fried bacon",
+            "cherry tomatoes",
+            "arugula salad"
+          ],
+          "description": "Iceberg salad, romaine with boiled poultry, slices of aged cheese, seasoned with mayonnaise sauce. Serve with a soft-boiled chicken egg, fried bacon, cherry tomatoes and arugula salad.",
+          "price": 7.64
+        },
+        {
+          "id": 14,
+          "type": "salads",
+          "image": "https://imgur.com/yXzAutM.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Greek salad",
+          "size": "260g",
+          "ingredients": [
+            "Salad mix",
+            "tomato, cucumber",
+            "Tajas olives",
+            "giant olives",
+            "red onion",
+            "feta cheese",
+            "olive oil",
+            "oregano",
+            "tapenade sauce"
+          ],
+          "description": "Salad mix, tomato, cucumber, Tajas olives, giant olives, red onion, feta cheese, olive oil, oregano, tapenade sauce.",
+          "price": 6.72
+        }
+      ],
+      "desserts": [
+        {
+          "id": 15,
+          "type": "desserts",
+          "image": "https://imgur.com/Hl63Cox.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Honey cake with orange mousse",
+          "size": "230g",
+          "ingredients": [
+            "sour cream with sugar for impregnating cakes",
+            "orange mousse",
+            "tangerine",
+            "honeycomb honey",
+            "ball vanilla ice cream"
+          ],
+          "description": "Honey cakes soaked in sour cream with sugar. Served with orange mousse, tangerine, honey combs and a scoop of vanilla ice cream.",
+          "price": 4.89
+        },
+        {
+          "id": 16,
+          "type": "desserts",
+          "image": "https://imgur.com/V0AKZBG.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Cake \"Kievsky\" according to the original recipe",
+          "size": "135g",
+          "ingredients": [
+            "Protein cakes",
+            "Charlotte vanilla butter cream",
+            "Charlotte chocolate butter cream",
+            "mixture of hazelnuts and cashews"
+          ],
+          "description": "Protein cakes with Charlotte vanilla and chocolate butter cream, covered with a mixture of hazelnuts and cashews.",
+          "price": 5.2
+        },
+        {
+          "id": 17,
+          "type": "desserts",
+          "image": "https://imgur.com/7msMexR.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Napoleon cake with a berry",
+          "size": "180g",
+          "ingredients": [
+            "Puff pastry crumbs",
+            "vanilla cream made of condensed milk and butter",
+            "blueberry jam",
+            "glazed in honey and cognac walnut"
+          ],
+          "description": "Puff pastry crumbs soaked in vanilla cream made from condensed milk and butter, covered with blueberry jam. We serve it with walnuts glazed in honey and cognac.",
+          "price": 4.28
+        }
+      ],
+      "soups": [
+        {
+          "id": 18,
+          "type": "soups",
+          "image": "https://imgur.com/fOUNqKx.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Crayfish soup with three types of fish and a pancake",
+          "size": "355g",
+          "ingredients": [
+            "crab",
+            "salmon",
+            "walleye",
+            "mullet",
+            "potatoes",
+            "carrots",
+            "lightly salted cucumber",
+            "cherry tomato",
+            "spices",
+            "fresh herbs",
+            "pancake with cottage cheese",
+            "mascarpone cheese",
+            "pickled salmon",
+            "dill"
+          ],
+          "description": "Rich fish soup of crayfish, salmon, walleye and mullet with potatoes, carrots, lightly salted cucumber, cherry tomatoes, spices and fresh herbs. Served with a pancake with cottage cheese, mascarpone cheese, pickled salmon and dill.",
+          "price": 16.19
+        },
+        {
+          "id": 19,
+          "type": "soups",
+          "image": "https://imgur.com/quTLaye.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Free poultry with vegetables",
+          "size": "370g",
+          "ingredients": [
+            "chicken broth",
+            "celery root and stalk",
+            "carrots",
+            "star paste",
+            "sumac",
+            "mint",
+            "reen onions",
+            "fresh herbs"
+          ],
+          "description": "Rich chicken broth with celery root and stem, carrots, star paste, sumac, mint, green onions and fresh herbs.",
+          "price": 4.58
+        },
+        {
+          "id": 20,
+          "type": "soups",
+          "image": "https://imgur.com/pILE5ro.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Borscht - chili pepper",
+          "size": "570g",
+          "ingredients": [
+            "meat broth",
+            "boiled beef cheeks",
+            "baked beets",
+            "carrots",
+            "onions",
+            "garlic",
+            "tomato paste",
+            "spices",
+            "plums",
+            "cranberries",
+            "cherry tomatoes",
+            "chili peppers",
+            "fresh herbs",
+            "salted lard",
+            "rye bread",
+            "cucumber",
+            "sour cream",
+            "fermented honey"
+          ],
+          "description": "Rich meat broth, boiled beef cheeks, baked beets, carrots, onions, garlic, tomato paste, spices, plums, cranberries, cherry tomatoes, chili peppers and fresh herbs. We serve it with lard of our own salting on rye bread, cucumber with suspended sour cream and fermented honey.",
+          "price": 6.72
+        }
+      ],
+      "drinks": [
+        {
+          "id": 21,
+          "type": "drink",
+          "image": "https://i.imgur.com/yYknPE7.png",
+          "alt_image": "mango_lemonade",
+          "name": "Mango Lemonade",
+          "size": "250ml",
+          "ingredients": [
+            "water",
+            "mango juice"
+          ],
+          "price": 4.5
+        },
+        {
+          "id": 22,
+          "type": "drink",
+          "image": "https://imgur.com/dV8CgyE.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Passion Fruit Lemonade",
+          "size": "250ml",
+          "ingredients": [
+            "water",
+            "passion fruit juice"
+          ],
+          "price": 4.5
+        },
+        {
+          "id": 23,
+          "type": "drink",
+          "image": "https://i.imgur.com/tktZ6r4.png",
+          "alt_image": "raspberry_lemonade",
+          "name": "Raspberry Lemonade",
+          "size": "250ml",
+          "ingredients": [
+            "water",
+            "raspberry juice"
+          ],
+          "price": 4.5
+        },
+        {
+          "id": 24,
+          "type": "drink",
+          "image": "https://imgur.com/BoEgxOq.png",
+          "alt_image": "sea-buckthorn_lemonade",
+          "name": "Sea Buckthorn Lemonade",
+          "size": "250ml",
+          "ingredients": [
+            "water",
+            "sea buckthorn juice"
+          ],
+          "price": 4.5
+        },
+        {
+          "id": 25,
+          "type": "drink",
+          "image": "https://imgur.com/Vvv9crW.png",
+          "alt_image": "detox_cocktail",
+          "name": "Detox cocktail",
+          "size": "250ml",
+          "price": 5.5
+        },
+        {
+          "id": 26,
+          "type": "drink",
+          "image": "https://imgur.com/FmVOokI.png",
+          "alt_image": "coca-cola",
+          "name": "Coca-Cola",
+          "size": "330ml",
+          "price": 1.8
+        },
+        {
+          "id": 27,
+          "type": "drink",
+          "image": "https://imgur.com/eKyF1WA.png",
+          "alt_image": "coca-cola_zero",
+          "name": "Coca Zero",
+          "size": "330ml",
+          "price": 1.8
+        }
+      ],
+      "pastes": [
+        {
+          "id": 28,
+          "type": "pasta",
+          "image": "https://imgur.com/0NddR32.png",
+          "alt_image": "coca-cola_zero",
+          "name": "Salmon pasta with Ligurian saffron and Kamchatka caviar",
+          "size": "400g",
+          "ingredients": [
+            "Papardelle's own modeling. We cook in a creamy sauce with salmon, onion, dill, white wine and saffron. Served with red caviar",
+            "passion fruit juice"
+          ],
+          "price": 16.81
+        },
+        {
+          "id": 29,
+          "type": "pasta",
+          "image": "https://imgur.com/p5DGLfu.png",
+          "alt_image": "coca-cola_zero",
+          "name": "Pasta with vongole and shrimp",
+          "size": "420g",
+          "ingredients": [
+            "Homemade spaghetti. We cook in a creamy sauce with king prawns, onions, garlic, thyme and white wine. Serve with aged cheese, parsley, fresh chili pepper, vongole, stewed in fish broth with thyme and garlic"
+          ],
+          "price": 12.84
+        },
+        {
+          "id": 30,
+          "type": "pasta",
+          "image": "https://imgur.com/cyPO55F.png",
+          "alt_image": "coca-cola_zero",
+          "name": "Pasta of our modeling `According to the recipe of Umbrian miners`",
+          "size": "390g",
+          "ingredients": [
+            "Homemade spaghetti. We cook in a sauce of fried bacon, red onion, garlic, egg yolks, aged cheese and nutmeg. Serve with grated aged cheese, freshly ground black pepper, olive oil and fresh basil"
+          ],
+          "price": 9.47
+        },
+        {
+          "id": 31,
+          "type": "pasta",
+          "image": "https://imgur.com/wbRb4lR.png",
+          "alt_image": "coca-cola_zero",
+          "name": "Ravioli with young duck",
+          "size": "270g",
+          "ingredients": [
+            "Homemade ravioli with confit of duck, shiitake mushrooms and garlic. We cook in a sauce of chicken broth, butter, white wine with onions, garlic, cherry tomatoes and fresh spinach. Served with cheese chips and fresh basil"
+          ],
+          "price": 12.22
+        }
+      ],
+      "risotto": [
+        {
+          "id": 32,
+          "type": "risotto",
+          "image": "https://imgur.com/AhIhjEF.png",
+          "alt_image": "coca-cola_zero",
+          "name": "Risotto with brisket, pumpkin and saffron",
+          "size": "350g",
+          "ingredients": [
+            "Arborio rice cooked in a butternut squash sauce with saffron, aged cheese, thyme, butter, garlic and white wine. Served with fried bacon, fresh mint, grated aged cheese and pumpkin seeds"
+          ],
+          "price": 10.39
+        },
+        {
+          "id": 33,
+          "type": "risotto",
+          "image": "https://imgur.com/0taohYr.png",
+          "alt_image": "coca-cola_zero",
+          "name": "Risotto \"Lesnoe with\" with oyster mushrooms",
+          "size": "320g",
+          "ingredients": [
+            "Arborio rice cooked in a creamy sauce with oyster mushrooms and thyme, garlic, aged cheese, butter, truffle paste and spinach. Served with deep-fried breaded oyster mushrooms"
+          ],
+          "price": 11.92
+        },
+        {
+          "id": 34,
+          "type": "risotto",
+          "image": "https://imgur.com/4cfWd31.png",
+          "alt_image": "coca-cola_zero",
+          "name": "Risotto with mackerel",
+          "size": "320g",
+          "ingredients": null,
+          "price": 8.25
+        }
+      ],
+      "pizzas": [
+        {
+          "id": 35,
+          "type": "pizzas",
+          "image": "https://imgur.com/vBpiZDT.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Pizza with mortadella",
+          "size": "610g",
+          "ingredients": [
+            "Italian flour dough",
+            "mortadella",
+            "pistachios",
+            "mozzarella cheese",
+            "cream cheese sauce",
+            "truffle paste",
+            "tomato",
+            "pesto sauce",
+            "fresh basil",
+            "olive oil"
+          ],
+          "description": "Italian flour dough with mortadella with pistachios, mozzarella cheese, cream cheese sauce, truffle paste, tomato, pesto sauce, fresh basil and olive oil.",
+          "price": 11
+        },
+        {
+          "id": 36,
+          "type": "pizzas",
+          "image": "https://imgur.com/TF4gTJ8.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Sandwich, mortadella, pesto",
+          "size": "240g",
+          "ingredients": [
+            "Crispy focaccia of our pastries",
+            "mortadella",
+            "pistachios",
+            "pesto sauce",
+            "melted cheese",
+            "onion and garlic butter",
+            "tomato"
+          ],
+          "description": "Crispy focaccia of our baking with mortadella with pistachios, pesto sauce, melted cheese, onion-garlic butter and tomato.",
+          "price": 7.33
+        },
+        {
+          "id": 37,
+          "type": "pizzas",
+          "image": "https://imgur.com/vYrgeWH.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "A healthy turkey sandwich",
+          "size": "240g",
+          "ingredients": [
+            "Crispy focaccia of our pastries",
+            "stewed turkey",
+            "pesto sauce",
+            "melted cheese",
+            "onion and garlic butter",
+            "tomato"
+          ],
+          "description": "Crispy focaccia of our pastries with stewed turkey, pesto sauce, melted cheese, onion and garlic butter and tomato.",
+          "price": 6.72
+        },
+        {
+          "id": 38,
+          "type": "pizzas",
+          "image": "https://imgur.com/xOxofyd.png",
+          "alt_image": "passion-fruit_lemonade",
+          "name": "Pizza \"Parma\"",
+          "size": "600g",
+          "ingredients": [
+            "Italian flour dough",
+            "spicy tomato sauce",
+            "olive oil",
+            "mozzarella cheese",
+            "prosciutto crudo",
+            "pistachios",
+            "arugula",
+            "dried cherry tomatoes"
+          ],
+          "description": "Italian flour dough with spicy tomato sauce, olive oil, mozzarella cheese, prosciutto crudo, pistachios, arugula and dried cherry tomatoes.",
+          "price": 14.97
+        }
+      ]
+    }
+  ]
