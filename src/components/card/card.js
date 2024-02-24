@@ -10,7 +10,7 @@ export async function getCardsData(value) {
     const arrCardsByCategory = data[0][nameCategory];
 
     deleteCardsByCategory();
-    arrCardsByCategory.forEach((obj) => addMenu(obj));
+    arrCardsByCategory.forEach((obj) => addMenu(obj, 'ordinary'));
 
   } catch (e) {
     console.error("error", e);

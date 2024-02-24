@@ -46,6 +46,13 @@
 
 .card {
 
+    &_modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     &__wrapper {
         min-height: 60vh;
         padding: 50px 20px 30px 20px;
@@ -61,14 +68,34 @@
             cursor: pointer;
             transform: scale(1.05);
         }
+
+        &_modal {
+            background-color: dimgrey;
+            width: 950px;
+            padding: 0;
+            flex-direction: row;
+        }
     }
 
     &__image {
         max-width: 230px;
         margin: 0 auto;
 
+        &_modal {
+            // max-width: 550px;
+            width: 550px;
+        }
+
         img {
             width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__content {
+
+        &_modal {
+            padding: 25px;
         }
     }
 
@@ -88,6 +115,18 @@
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             display: -webkit-box;
+        }
+
+        &_modal {
+
+            padding: 0;
+            
+            span {
+                margin: 0 auto;
+                font-size: 20px;
+                font-weight: 900;
+                text-align: start;
+            }
         }
     }
 
