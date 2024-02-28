@@ -57,9 +57,17 @@ function crtCardImg(value) {
 
 function crtCardContent(data, type) {
     const cardContent = document.createElement('div');
-    const chooseClass = type === "ordinary" ? "card__content" : "card__content_modal";
-    cardContent.classList.add(chooseClass);
-    cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
+    // const chooseClass = type === "ordinary" ? "card__content" : "card__content_modal";
+    // cardContent.classList.add(chooseClass);
+    // cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
+
+    if(type === "ordinary") {
+        cardContent.classList.add("card__content");
+        cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
+    } else if (type === "modal"){
+        cardContent.classList.add("card__content_modal");
+        cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardDescription(data), crtCardFooter(data));
+    }
 
     return cardContent;
 }
@@ -111,15 +119,18 @@ function crtCardIngredients(value) {
     return cardIngredients;
 }
 
-// function crtCardDescription(value, type) {
-//     const cardDescription = document.createElement('div');
-//     cardDescription.classList.add('card__description');
+function crtCardDescription(value) {
+    const cardDescription = document.createElement('div');
+    cardDescription.classList.add('card__description');
 
-//     const cardDescriptionText = document.createElement('span');
-//     cardDescription.append(cardDescriptionText);
+    if(value.description && value.description !== null) {
+        const cardDescriptionText = document.createElement('span');
+        cardDescriptionText.textContent = value.description;
+        cardDescription.append(cardDescriptionText);
+    }
 
-//     return cardDescription
-// }
+    return cardDescription;
+}
 
 function crtCardFooter(data) {
     const cardFooter = document.createElement('div');
