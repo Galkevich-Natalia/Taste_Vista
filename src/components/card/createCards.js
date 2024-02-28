@@ -65,8 +65,17 @@ function crtCardContent(data, type) {
         cardContent.classList.add("card__content");
         cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
     } else if (type === "modal"){
-        cardContent.classList.add("card__content_modal");
-        cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardDescription(data), crtCardFooter(data));
+        cardContent.classList.add("card__content_modal")
+
+        // if(data.description === null) {
+        //     cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardFooter(data));
+        // } else {
+        //     cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardDescription(data), crtCardFooter(data));
+        // }
+
+        cardContent.append(crtCardName(data, type), crtCardSize(data));
+        data.description !== null && cardContent.append(crtCardDescription(data));
+        cardContent.append(crtCardFooter(data));
     }
 
     return cardContent;
@@ -123,14 +132,13 @@ function crtCardDescription(value) {
     const cardDescription = document.createElement('div');
     cardDescription.classList.add('card__description');
 
-    if(value.description && value.description !== null) {
-        const cardDescriptionText = document.createElement('span');
-        cardDescriptionText.textContent = value.description;
-        cardDescription.append(cardDescriptionText);
-    }
+    const cardDescriptionText = document.createElement('span');
+    cardDescriptionText.textContent = value.description;
+    cardDescription.append(cardDescriptionText);
 
     return cardDescription;
 }
+//value.description && value.description !== null
 
 function crtCardFooter(data) {
     const cardFooter = document.createElement('div');
