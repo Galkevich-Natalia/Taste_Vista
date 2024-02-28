@@ -1,13 +1,11 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
+import { addModal } from "./card";
 
 const cardsContainer = document.querySelector('.cards__container');
 
 export function addMenu(data, type) {
     cardsContainer.append(crtCard(data, type));
-}
-
-function addModal(event) {
-    console.log(event.currentTarget.id);
+    //console.log("addMenu", data);
 }
 
 function crtCard(data, type) {

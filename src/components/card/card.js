@@ -1,10 +1,16 @@
 import { getMenu } from "../../api/getApi";
 import { addMenu } from "./createCards";
+import { getCardDatabById } from "../../api/getApi";
+
+export let cardsData = [];
 
 export async function getCardsData(value) {
 
   try {
     const data = await getMenu();
+
+    // cardsData = [...data];
+    // console.log(cardsData);
 
     const nameCategory = value.toLowerCase();
     const arrCardsByCategory = data[0][nameCategory];
@@ -46,6 +52,29 @@ function selectedCategory(event) {
   const dataCategory = event.target.textContent;
   
   getCardsData(dataCategory);
+}
+
+export function addModal(event) {
+  // console.log(typeof event.currentTarget.id);
+  // console.log("cardsData");
+
+  // addMenu(item, 'modal');
+  const cardId = +event.currentTarget.id;
+  console.log(cardId)
+
+  try {
+    getCardDatabById(cardId)
+    .then(cardData => {
+      console.log(cardData)
+      addMenu(cardData, 'modal');
+      
+      // Здесь вы можете выполнить любую дополнительную обработку данных
+      // и использовать их по вашему усмотрению.
+    });
+    
+  } catch(error) {
+    throw error;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
