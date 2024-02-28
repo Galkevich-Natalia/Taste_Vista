@@ -5,7 +5,6 @@ const cardsContainer = document.querySelector('.cards__container');
 
 export function addMenu(data, type) {
     cardsContainer.append(crtCard(data, type));
-    //console.log("addMenu", data);
 }
 
 function crtCard(data, type) {
@@ -57,21 +56,12 @@ function crtCardImg(value) {
 
 function crtCardContent(data, type) {
     const cardContent = document.createElement('div');
-    // const chooseClass = type === "ordinary" ? "card__content" : "card__content_modal";
-    // cardContent.classList.add(chooseClass);
-    // cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
 
     if(type === "ordinary") {
         cardContent.classList.add("card__content");
         cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
     } else if (type === "modal"){
         cardContent.classList.add("card__content_modal")
-
-        // if(data.description === null) {
-        //     cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardFooter(data));
-        // } else {
-        //     cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardDescription(data), crtCardFooter(data));
-        // }
 
         cardContent.append(crtCardName(data, type), crtCardSize(data));
         data.description !== null && cardContent.append(crtCardDescription(data));
@@ -138,7 +128,6 @@ function crtCardDescription(value) {
 
     return cardDescription;
 }
-//value.description && value.description !== null
 
 function crtCardFooter(data) {
     const cardFooter = document.createElement('div');

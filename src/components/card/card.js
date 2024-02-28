@@ -9,9 +9,6 @@ export async function getCardsData(value) {
   try {
     const data = await getMenu();
 
-    // cardsData = [...data];
-    // console.log(cardsData);
-
     const nameCategory = value.toLowerCase();
     const arrCardsByCategory = data[0][nameCategory];
 
@@ -45,7 +42,6 @@ function selectedCategory(event) {
   deleteStylesBtnsCategories();
 
   const btnCategory = event.target;
-  // console.log(event);
 
   btnCategory.classList.add("menu__item-button_active");
 
@@ -55,10 +51,7 @@ function selectedCategory(event) {
 }
 
 export function addModal(event) {
-  // console.log(typeof event.currentTarget.id);
-  // console.log("cardsData");
 
-  // addMenu(item, 'modal');
   const cardId = +event.currentTarget.id;
   console.log(cardId)
 
@@ -67,9 +60,6 @@ export function addModal(event) {
     .then(cardData => {
       console.log(cardData)
       addMenu(cardData, 'modal');
-      
-      // Здесь вы можете выполнить любую дополнительную обработку данных
-      // и использовать их по вашему усмотрению.
     });
     
   } catch(error) {

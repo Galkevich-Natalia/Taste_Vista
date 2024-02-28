@@ -70,10 +70,8 @@
         }
 
         &_modal {
-            //background-color: dimgrey;
-            //width: 950px;
-            background-color: #ffffff;
-            width: 900px;
+            background-color: dimgrey;
+            width: 950px;
             padding: 0;
             display: flex;
         }
@@ -84,8 +82,6 @@
         margin: 0 auto;
 
         &_modal {
-            // max-width: 550px;
-            // width: 550px;
             flex: 1;
 
             img {
