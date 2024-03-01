@@ -3,7 +3,6 @@ export async function getMenu() {
      .then((responce) => responce.json())
      .then((data) => {
         return data
-        // console.log(data);
      })
      .catch(error => { 
         throw error 

@@ -5,10 +5,8 @@ import { getCardDatabById } from "../../api/getApi";
 export let cardsData = [];
 
 export async function getCardsData(value) {
-
   try {
     const data = await getMenu();
-
     const nameCategory = value.toLowerCase();
     const arrCardsByCategory = data[0][nameCategory];
 
@@ -16,13 +14,12 @@ export async function getCardsData(value) {
     arrCardsByCategory.forEach((obj) => addMenu(obj, 'ordinary'));
 
   } catch (e) {
-    console.error("error", e);
+      console.error("error", e);
     throw e;
   }
 }
 
 function deleteCardsByCategory() {
-  
   const cards = document.querySelectorAll(".card");
   cards.forEach(item => item.remove());
 }
@@ -38,27 +35,20 @@ function getMenuByCategory() {
 }
 
 function selectedCategory(event) {
-  
-  deleteStylesBtnsCategories();
-
   const btnCategory = event.target;
-
-  btnCategory.classList.add("menu__item-button_active");
-
   const dataCategory = event.target.textContent;
-  
+
+  deleteStylesBtnsCategories();
+  btnCategory.classList.add("menu__item-button_active");
   getCardsData(dataCategory);
 }
 
 export function addModal(event) {
-
   const cardId = +event.currentTarget.id;
-  console.log(cardId)
 
   try {
     getCardDatabById(cardId)
     .then(cardData => {
-      console.log(cardData)
       addMenu(cardData, 'modal');
     });
     
@@ -68,13 +58,10 @@ export function addModal(event) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-
   const navBtnsCategories = document.querySelectorAll(".menu__item-button");
-
   const defaultCategoryBtn = navBtnsCategories[0];
 
   defaultCategoryBtn.classList.add("menu__item-button_active");
-
   getCardsData("snacks");
   getMenuByCategory();
 });
