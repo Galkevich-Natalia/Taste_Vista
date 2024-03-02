@@ -63,12 +63,35 @@ function crtCardContent(data, type) {
     } else if (type === "modal"){
         cardContent.classList.add("card__content_modal")
 
-        cardContent.append(crtCardName(data, type), crtCardSize(data));
+        cardContent.append(crtContainerBtnClose(type), crtCardName(data, type), crtCardSize(data));
         data.description !== null && cardContent.append(crtCardDescription(data));
         cardContent.append(crtCardFooter(data));
     }
 
     return cardContent;
+}
+
+function crtContainerBtnClose(type) {
+    const btnContainerClose = document.createElement('div');
+    const currentType = type;
+    
+    if(currentType === "modal") {
+        btnContainerClose.classList.add('card__containerCross');
+        btnContainerClose.append(crtBtnClsoe(type));
+    }
+
+    return btnContainerClose;
+}
+
+function crtBtnClsoe(type) {
+    const btnClose = document.createElement('button');
+    const currentType = type;
+    
+    if(currentType === "modal") {
+        btnClose.classList.add('card__cross');
+    }
+
+    return btnClose;
 }
 
 function crtCardName(data, type) {
@@ -80,7 +103,6 @@ function crtCardName(data, type) {
 }
 
 function crtTextName(value, type) {
-    console.log("type", type);
     const textName = document.createElement('span');
     const chooseClass = type === "ordinary" ? "card__text" : "card__text_modal";
     textName.classList.add(chooseClass);

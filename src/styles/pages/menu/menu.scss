@@ -77,6 +77,42 @@
         }
     }
 
+    &__containerCross {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    &__cross {
+
+        width: 25px;
+        height: 2px;
+        cursor: pointer;
+    
+        &::after, 
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: #fff;
+            width: 3px;
+            height: 28px;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            -ms-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        &::before {
+            transform: rotate(45deg);
+        }
+        
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+    
+
     &__image {
         max-width: 230px;
         margin: 0 auto;
