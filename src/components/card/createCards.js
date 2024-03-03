@@ -1,5 +1,6 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
 import { addModal } from "./card";
+import { closeModalByCross } from "./callModals";
 
 const cardsContainer = document.querySelector('.cards__container');
 
@@ -89,6 +90,7 @@ function crtBtnClsoe(type) {
     
     if(currentType === "modal") {
         btnClose.classList.add('card__cross');
+        btnClose.addEventListener('click', closeModalByCross);
     }
 
     return btnClose;
