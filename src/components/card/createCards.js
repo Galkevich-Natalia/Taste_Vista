@@ -1,6 +1,6 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
 import { addModal } from "./card";
-import { closeModalByCross } from "./callModals";
+import { closeModalByCross } from "./closeModal";
 
 const cardsContainer = document.querySelector('.cards__container');
 
@@ -15,7 +15,9 @@ function crtCard(data, type) {
     card.id = data.id;
     card.append(crtCardContainer(data, type));
 
-    card.addEventListener('click', addModal);
+    if(type === "ordinary") {
+        card.addEventListener('click', addModal);
+    } 
 
     return card;
 }
@@ -64,7 +66,7 @@ function crtCardContent(data, type) {
     } else if (type === "modal"){
         cardContent.classList.add("card__content_modal")
 
-        cardContent.append(crtContainerBtnClose(type), crtCardName(data, type), crtCardSize(data));
+        cardContent.append(crtContainerBtnClose(), crtCardName(data, type), crtCardSize(data));
         data.description !== null && cardContent.append(crtCardDescription(data));
         cardContent.append(crtCardFooter(data));
     }
@@ -72,26 +74,18 @@ function crtCardContent(data, type) {
     return cardContent;
 }
 
-function crtContainerBtnClose(type) {
+function crtContainerBtnClose() {
     const btnContainerClose = document.createElement('div');
-    const currentType = type;
-    
-    if(currentType === "modal") {
-        btnContainerClose.classList.add('card__containerCross');
-        btnContainerClose.append(crtBtnClsoe(type));
-    }
+    btnContainerClose.classList.add('card__containerCross');
+    btnContainerClose.append(crtBtnClsoe());
 
     return btnContainerClose;
 }
 
-function crtBtnClsoe(type) {
+function crtBtnClsoe() {
     const btnClose = document.createElement('button');
-    const currentType = type;
-    
-    if(currentType === "modal") {
-        btnClose.classList.add('card__cross');
-        btnClose.addEventListener('click', closeModalByCross);
-    }
+    btnClose.classList.add('card__cross');
+    btnClose.addEventListener('click', closeModalByCross);
 
     return btnClose;
 }
