@@ -45,6 +45,7 @@ function selectedCategory(event) {
 export function addModal(event) {
   const cardId = +event.currentTarget.id;
   const overlay = document.querySelector('.overlay');
+  const body = document.querySelector('body');
 
   try {
     getCardDatabById(cardId)
@@ -52,6 +53,7 @@ export function addModal(event) {
       addMenu(cardData, 'modal');
       overlay.style.display = 'block';
       overlay.addEventListener('click', closeModalByClickOutside);
+      body.classList.add('modal-open');
     });
     
   } catch(error) {
