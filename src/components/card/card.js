@@ -1,8 +1,7 @@
 import { getMenu } from "../../api/getApi";
 import { addMenu } from "./createCards";
 import { getCardDatabById } from "../../api/getApi";
-
-export let cardsData = [];
+import { closeModalByClickOutside } from "./closeModal";
 
 export async function getCardsData(value) {
   try {
@@ -45,11 +44,14 @@ function selectedCategory(event) {
 
 export function addModal(event) {
   const cardId = +event.currentTarget.id;
+  const overlay = document.querySelector('.overlay');
 
   try {
     getCardDatabById(cardId)
     .then(cardData => {
       addMenu(cardData, 'modal');
+      overlay.style.display = 'block';
+      overlay.addEventListener('click', closeModalByClickOutside);
     });
     
   } catch(error) {

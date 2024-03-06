@@ -77,12 +77,12 @@ function crtCardContent(data, type) {
 function crtContainerBtnClose() {
     const btnContainerClose = document.createElement('div');
     btnContainerClose.classList.add('card__containerCross');
-    btnContainerClose.append(crtBtnClsoe());
+    btnContainerClose.append(crtBtnClose());
 
     return btnContainerClose;
 }
 
-function crtBtnClsoe() {
+function crtBtnClose() {
     const btnClose = document.createElement('button');
     btnClose.classList.add('card__cross');
     btnClose.addEventListener('click', closeModalByCross);
