@@ -1,25 +1,24 @@
 import { getMenu } from "../../api/getApi";
 import { addMenu } from "./createCards";
+import { getCardDatabById } from "../../api/getApi";
+import { closeModal } from "./closeModal";
 
 export async function getCardsData(value) {
-
   try {
     const data = await getMenu();
-
     const nameCategory = value.toLowerCase();
     const arrCardsByCategory = data[0][nameCategory];
 
     deleteCardsByCategory();
-    arrCardsByCategory.forEach((obj) => addMenu(obj));
+    arrCardsByCategory.forEach((obj) => addMenu(obj, 'ordinary'));
 
   } catch (e) {
-    console.error("error", e);
+      console.error("error", e);
     throw e;
   }
 }
 
 function deleteCardsByCategory() {
-  
   const cards = document.querySelectorAll(".card");
   cards.forEach(item => item.remove());
 }
@@ -35,27 +34,38 @@ function getMenuByCategory() {
 }
 
 function selectedCategory(event) {
-  
-  deleteStylesBtnsCategories();
-
   const btnCategory = event.target;
-  // console.log(event);
-
-  btnCategory.classList.add("menu__item-button_active");
-
   const dataCategory = event.target.textContent;
-  
+
+  deleteStylesBtnsCategories();
+  btnCategory.classList.add("menu__item-button_active");
   getCardsData(dataCategory);
 }
 
+export function addModal(event) {
+  const cardId = +event.currentTarget.id;
+  const overlay = document.querySelector('.overlay');
+  const body = document.querySelector('body');
+
+  try {
+    getCardDatabById(cardId)
+    .then(cardData => {
+      addMenu(cardData, 'modal');
+      overlay.style.display = 'block';
+      overlay.addEventListener('click', closeModal);
+      body.classList.add('modal-open');
+    });
+    
+  } catch(error) {
+    throw error;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-
   const navBtnsCategories = document.querySelectorAll(".menu__item-button");
-
   const defaultCategoryBtn = navBtnsCategories[0];
 
   defaultCategoryBtn.classList.add("menu__item-button_active");
-
   getCardsData("snacks");
   getMenuByCategory();
 });

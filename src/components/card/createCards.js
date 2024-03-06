@@ -1,38 +1,48 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
+import { addModal } from "./card";
+import { closeModal } from "./closeModal";
 
 const cardsContainer = document.querySelector('.cards__container');
 
-export function addMenu(data) {
-    cardsContainer.append(crtCard(data));
+export function addMenu(data, type) {
+    cardsContainer.append(crtCard(data, type));
 }
 
-function crtCard(data) {
+function crtCard(data, type) {
     const card = document.createElement('div');
-    card.classList.add('card');
-    card.append(crtCardContainer(data));
+    const chooseClass = type === "ordinary" ? "card" : "card_modal";
+    card.classList.add(chooseClass);
+    card.id = data.id;
+    card.append(crtCardContainer(data, type));
+
+    if(type === "ordinary") {
+        card.addEventListener('click', addModal);
+    } 
 
     return card;
 }
 
-function crtCardContainer(data) {
+function crtCardContainer(data, type) {
     const cardContainer = document.createElement('div');
     cardContainer.classList.add('card__container');
-    cardContainer.append(crtCardWrapper(data));
+    cardContainer.append(crtCardWrapper(data, type));
 
     return cardContainer;
 }
 
-function crtCardWrapper(data) {
+function crtCardWrapper(data, type) {
     const cardWrapper = document.createElement('div');
-    cardWrapper.classList.add('card__wrapper');
-    cardWrapper.append(crtCardContImage(data), crtCardContent(data));
+    const chooseClass = type === "ordinary" ? "card__wrapper" : "card__wrapper_modal";
+    cardWrapper.classList.add(chooseClass);
+    cardWrapper.append(crtCardContImage(data, type), crtCardContent(data, type));
 
     return cardWrapper;
 }
 
-function crtCardContImage(data) {
+function crtCardContImage(data, type) {
     const cardContImage = document.createElement('div');
-    cardContImage.classList.add('card__image');
+    const chooseClass = type === "ordinary" ? "card__image" : "card__image_modal";
+    cardContImage.classList.add(chooseClass);
     cardContImage.append(crtCardImg(data));
 
     return cardContImage;
@@ -47,25 +57,51 @@ function crtCardImg(value) {
     return cardImg;
 }
 
-function crtCardContent(data) {
+function crtCardContent(data, type) {
     const cardContent = document.createElement('div');
-    cardContent.classList.add('card__content');
-    cardContent.append(crtCardName(data), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
+
+    if(type === "ordinary") {
+        cardContent.classList.add("card__content");
+        cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
+    } else if (type === "modal"){
+        cardContent.classList.add("card__content_modal")
+
+        cardContent.append(crtContainerBtnClose(), crtCardName(data, type), crtCardSize(data));
+        data.description !== null && cardContent.append(crtCardDescription(data));
+        cardContent.append(crtCardFooter(data));
+    }
 
     return cardContent;
 }
 
-function crtCardName(data) {
+function crtContainerBtnClose() {
+    const btnContainerClose = document.createElement('div');
+    btnContainerClose.classList.add('card__containerCross');
+    btnContainerClose.append(crtBtnClose());
+
+    return btnContainerClose;
+}
+
+function crtBtnClose() {
+    const btnClose = document.createElement('button');
+    btnClose.classList.add('card__cross');
+    btnClose.addEventListener('click', closeModal);
+
+    return btnClose;
+}
+
+function crtCardName(data, type) {
     const container = document.createElement('div');
     container.classList.add('card__name');
-    container.append(crtTextName(data));
+    container.append(crtTextName(data, type));
 
     return container;
 }
 
-function crtTextName(value) {
+function crtTextName(value, type) {
     const textName = document.createElement('span');
-    textName.classList.add('card__text');
+    const chooseClass = type === "ordinary" ? "card__text" : "card__text_modal";
+    textName.classList.add(chooseClass);
     textName.textContent = value.name;
 
     return textName;
@@ -81,7 +117,7 @@ function crtCardSize(data) {
 
 function crtTextSize(value) {
     const textSize = document.createElement('span');
-    textSize.classList.add('card__size');
+    textSize.classList.add('card__sizeValue');
     textSize.textContent = value.size;
 
     return textSize;
@@ -98,6 +134,17 @@ function crtCardIngredients(value) {
     }
 
     return cardIngredients;
+}
+
+function crtCardDescription(value) {
+    const cardDescription = document.createElement('div');
+    cardDescription.classList.add('card__description');
+
+    const cardDescriptionText = document.createElement('span');
+    cardDescriptionText.textContent = value.description;
+    cardDescription.append(cardDescriptionText);
+
+    return cardDescription;
 }
 
 function crtCardFooter(data) {
