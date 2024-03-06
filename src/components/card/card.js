@@ -1,7 +1,7 @@
 import { getMenu } from "../../api/getApi";
 import { addMenu } from "./createCards";
 import { getCardDatabById } from "../../api/getApi";
-import { closeModalByClickOutside } from "./closeModal";
+import { closeModal } from "./closeModal";
 
 export async function getCardsData(value) {
   try {
@@ -52,7 +52,7 @@ export function addModal(event) {
     .then(cardData => {
       addMenu(cardData, 'modal');
       overlay.style.display = 'block';
-      overlay.addEventListener('click', closeModalByClickOutside);
+      overlay.addEventListener('click', closeModal);
       body.classList.add('modal-open');
     });
     
