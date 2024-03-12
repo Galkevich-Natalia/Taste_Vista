@@ -1,0 +1,89 @@
+.orders {
+    &__wrapper {
+        width: 800px;
+        padding: 50px 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        text-align: center;
+        padding: 50px 0;
+        font-family: "Dancing Script", cursive;
+        font-size: 40px;
+    }
+
+    &-card {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 0;
+
+        &__image {
+            width: 200px;
+            padding-right: 20px; 
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__name {
+            font-size: 20px;
+        }
+
+        &__counter {
+            padding-bottom: 15px;
+            display: flex;
+        }
+
+        &__plus,
+        &__minus {
+
+            button {
+                color: white;
+                font-size: 20px;
+            }
+        }
+
+        &__count {
+            padding: 0 15px;
+            font-size: 20px;
+        }
+
+        &__price {
+            font-size: 20px;
+        }
+    }
+
+    &__totalPrice {
+        padding: 45px 0;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    &__btn {
+
+        margin: 0 auto;
+        padding: 25px 0;
+    
+        button {
+            width: 100px;
+            padding: 5px 0;
+            background-color: #cf3432;
+            border: 1px solid white;
+            border-radius: 8px;
+            font-size: 20px;
+            color: white;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }  
+}
