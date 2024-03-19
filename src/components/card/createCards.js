@@ -1,6 +1,7 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
 import { addModal } from "./card";
 import { closeModal } from "./closeModal";
+import { getCardDatabById } from "../../api/getApi";
 
 const cardsContainer = document.querySelector('.cards__container');
 
@@ -18,6 +19,8 @@ function crtCard(data, type) {
     if(type === "ordinary") {
         card.addEventListener('click', addModal);
     } 
+
+    card.addEventListener('click', addDish);
 
     return card;
 }
@@ -173,7 +176,7 @@ function crtCardCost(value) {
 
 function crtCardConteinerBtn() {
     const cardContainerBtn = document.createElement('div');
-    cardContainerBtn.classList.add('card__btn');
+    cardContainerBtn.classList.add('card__container-btn');
     cardContainerBtn.append(crtCardBtn());
 
     return cardContainerBtn;
@@ -181,7 +184,7 @@ function crtCardConteinerBtn() {
 
 function crtCardBtn() {
     const cardBtn = document.createElement('button');
-    cardBtn.classList.add('button');
+    cardBtn.classList.add('card__btn');
     cardBtn.textContent = '+';
 
     return cardBtn;

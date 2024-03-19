@@ -43,21 +43,25 @@ function selectedCategory(event) {
 }
 
 export function addModal(event) {
-  const cardId = +event.currentTarget.id;
-  const overlay = document.querySelector('.overlay');
-  const body = document.querySelector('body');
-
-  try {
-    getCardDatabById(cardId)
-    .then(cardData => {
-      addMenu(cardData, 'modal');
-      overlay.style.display = 'block';
-      overlay.addEventListener('click', closeModal);
-      body.classList.add('modal-open');
-    });
+  
+  if(!event.target.classList.contains('card__btn')) {
     
-  } catch(error) {
-    throw error;
+    const cardId = +event.currentTarget.id;
+    const overlay = document.querySelector('.overlay');
+    const body = document.querySelector('body');
+
+    try {
+      getCardDatabById(cardId)
+      .then(cardData => { 
+          addMenu(cardData, 'modal');
+          overlay.style.display = 'block';
+          overlay.addEventListener('click', closeModal);
+          body.classList.add('modal-open');
+      });
+      
+    } catch(error) {
+      throw error;
+    }
   }
 }
 
