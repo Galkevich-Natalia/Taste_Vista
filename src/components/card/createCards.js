@@ -189,3 +189,40 @@ function crtCardBtn() {
 
     return cardBtn;
 }
+
+function addDish(event) {
+
+    if(event.target.classList.contains('card__btn')) {
+        const cardId = +event.currentTarget.id;
+
+        try {
+            getCardDatabById(cardId)
+            .then(dataOrder => {
+
+                const dataCard = getOrdersDataToStorage('Orders');
+
+                if(dataCard === null) {
+                    const arrForDataLocalStorage = [];
+                    arrForDataLocalStorage.push(dataOrder);
+                    setOrdersDataToStorage(arrForDataLocalStorage);
+                } else {
+                    const dataFromLocalStorage = getOrdersDataToStorage("Orders");
+                    dataFromLocalStorage.push(dataOrder);
+                    setOrdersDataToStorage(dataFromLocalStorage);
+                }
+            })
+    
+        } catch(error) {
+          throw error;
+        }
+    }
+}
+
+function setOrdersDataToStorage(data) {
+    localStorage.setItem('Orders', JSON.stringify(data));
+}
+
+function getOrdersDataToStorage() {
+    const orders = localStorage.getItem('Orders');
+    return JSON.parse(orders);
+}
