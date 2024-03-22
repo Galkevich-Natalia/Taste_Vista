@@ -43,9 +43,7 @@ function selectedCategory(event) {
 }
 
 export function addModal(event) {
-  
   if(!event.target.classList.contains('card__btn')) {
-    
     const cardId = +event.currentTarget.id;
     const overlay = document.querySelector('.overlay');
     const body = document.querySelector('body');
@@ -68,8 +66,8 @@ export function addModal(event) {
 document.addEventListener("DOMContentLoaded", () => {
   const navBtnsCategories = document.querySelectorAll(".menu__item-button");
   const defaultCategoryBtn = navBtnsCategories[0];
-
   defaultCategoryBtn.classList.add("menu__item-button_active");
+  
   getCardsData("snacks");
   getMenuByCategory();
 });
