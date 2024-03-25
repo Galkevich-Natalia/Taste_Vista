@@ -42,7 +42,7 @@ function selectedCategory(event) {
   getCardsData(dataCategory);
 }
 
-function addDish(event) {
+export function addDish(event) {
   if(event.target.classList.contains('card__btn')) {
       const cardId = +event.currentTarget.id;
 
