@@ -1,7 +1,5 @@
 import { getMenu } from "../../api/getApi";
 import { addMenu } from "./createCards";
-import { getCardDatabById } from "../../api/getApi";
-import { closeModal } from "./closeModal";
 
 export async function getCardsData(value) {
   try {
@@ -40,27 +38,6 @@ function selectedCategory(event) {
   deleteStylesBtnsCategories();
   btnCategory.classList.add("menu__item-button_active");
   getCardsData(dataCategory);
-}
-
-export function addModal(event) {
-  if(!event.target.classList.contains('card__btn')) {
-    const cardId = +event.currentTarget.id;
-    const overlay = document.querySelector('.overlay');
-    const body = document.querySelector('body');
-
-    try {
-      getCardDatabById(cardId)
-      .then(cardData => { 
-          addMenu(cardData, 'modal');
-          overlay.style.display = 'block';
-          overlay.addEventListener('click', closeModal);
-          body.classList.add('modal-open');
-      });
-      
-    } catch(error) {
-      throw error;
-    }
-  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {

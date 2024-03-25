@@ -1,6 +1,6 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
-import { addModal } from "./card";
-import { closeModal } from "./closeModal";
+import { addModal } from "../modal/modal";
+import { closeModal } from "../modal/modal";
 import { getCardDatabById } from "../../api/getApi";
 import { setOrdersDataToStorage, getOrdersDataToStorage } from "../../utils/localStorage";
 
