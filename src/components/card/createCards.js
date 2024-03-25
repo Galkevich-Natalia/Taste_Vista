@@ -1,8 +1,6 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
-import { addModal } from "../modal/modal";
-import { closeModal } from "../modal/modal";
-import { getCardDatabById } from "../../api/getApi";
-import { setOrdersDataToStorage, getOrdersDataToStorage } from "../../utils/localStorage";
+import { addModal, closeModal } from "../modal/modal";
+import { addDish } from "./card";
 
 const cardsContainer = document.querySelector('.cards__container');
 
@@ -188,27 +186,4 @@ function crtCardBtn() {
     cardBtn.textContent = '+';
 
     return cardBtn;
-}
-
-function addDish(event) {
-    if(event.target.classList.contains('card__btn')) {
-        const cardId = +event.currentTarget.id;
-
-        try {
-            getCardDatabById(cardId)
-            .then(dataOrder => {
-                const dataCard = getOrdersDataToStorage('Orders');
-
-                if(dataCard === null) {
-                    setOrdersDataToStorage([dataOrder]);
-                } else {
-                    const dataFromLocalStorage = getOrdersDataToStorage("Orders");
-                    dataFromLocalStorage.push(dataOrder);
-                    setOrdersDataToStorage(dataFromLocalStorage);
-                }
-            })
-        } catch(error) {
-          throw error;
-        }
-    }
 }
