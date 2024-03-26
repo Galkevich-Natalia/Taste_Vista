@@ -15,49 +15,51 @@
         font-size: 40px;
     }
 
-    .order {
-        &-card {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 20px 0;
-    
-            &__image {
-                width: 200px;
-                padding-right: 20px; 
-            }
-    
-            &__info {
+    &__cards {
+        .order {
+            &-card {
                 display: flex;
-                flex-direction: column;
+                justify-content: space-around;
                 align-items: center;
-            }
-    
-            &__name {
-                font-size: 20px;
-            }
-    
-            &__counter {
-                padding-bottom: 15px;
-                display: flex;
-            }
-    
-            &__plus,
-            &__minus {
-    
-                button {
-                    color: white;
+                padding: 20px 0;
+        
+                &__image {
+                    width: 200px;
+                    padding-right: 20px; 
+                }
+        
+                &__info {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+        
+                &__name {
                     font-size: 20px;
                 }
-            }
-    
-            &__count {
-                padding: 0 15px;
-                font-size: 20px;
-            }
-    
-            &__price {
-                font-size: 20px;
+        
+                &__counter {
+                    padding-bottom: 15px;
+                    display: flex;
+                }
+        
+                &__plus,
+                &__minus {
+        
+                    button {
+                        color: white;
+                        font-size: 20px;
+                    }
+                }
+        
+                &__count {
+                    padding: 0 15px;
+                    font-size: 20px;
+                }
+        
+                &__price {
+                    font-size: 20px;
+                }
             }
         }
     }

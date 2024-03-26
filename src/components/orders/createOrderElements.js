@@ -1,75 +1,51 @@
-const ordersWrapper = document.querySelector('.orders__wrapper');
+const ordersCards = document.querySelector('.orders__cards');
 
-function addOrders() {
-    ordersWrapper.append(createOrdersTitle(), createOrdersCards(), createOrdersTotalPrice(), createOrdersButton());
+export function addOrders(data) {
+    ordersCards.append(createOrderCard(data));
 }
 
-addOrders();
-
-function createOrdersTitle() {
-    const ordersTitle = document.createElement('div');
-    ordersTitle.classList.add('orders__title');
-    ordersTitle.append(createTitle());
-
-    return ordersTitle;
-}
-
-function createTitle() {
-    const title = document.createElement('h2');
-    title.textContent = "Orders";
-
-    return title;
-}
-
-function createOrdersCards() {
-    const ordersCards = document.createElement('div');
-    ordersCards.classList.add('orders__cards');
-    ordersCards.append(createOrderCard());
-
-    return ordersCards;
-}
-
-function createOrderCard() {
+function createOrderCard(data) {
     const orderCard = document.createElement('div');
     orderCard.classList.add('order-card');
-    orderCard.append(createOrderImage(), createOrderName(), createOrderInfo());
+    orderCard.append(createOrderImage(data), createOrderName(data), createOrderInfo(data));
 
     return orderCard;
 }
 
-function createOrderImage() {
+function createOrderImage(data) {
     const orderImage = document.createElement('div');
     orderImage.classList.add('order-card__image');
-    orderImage.append(createImage());
+    orderImage.append(createImage(data));
 
     return orderImage;
 }
 
-function createImage() {
-    const img = document.createElement('img');
+function createImage(data) {
+    const cardImg = document.createElement('img');
+    cardImg.src = data.image;
 
-    return img;
+    return cardImg;
 }
 
-function createOrderName() {
+function createOrderName(data) {
     const orderName = document.createElement('div');
     orderName.classList.add('order-card__name');
-    orderName.append(createName());
+    orderName.append(createName(data));
 
     return orderName;
 }
 
-function createName() {
+function createName(data) {
     const name = document.createElement('span');
-    name.textContent = "Pizza";
+    name.textContent = data.name;
 
     return name;
 }
 
-function createOrderInfo() {
+function createOrderInfo(data) {
     const info = document.createElement('div');
     info.classList.add('order-card__info');
-    info.append(createOrderCounter());
+    info.append(createOrderCounter(), createOrderPrice(data));
 
     return info;
 }
@@ -127,46 +103,17 @@ function createMinus() {
     return minus;
 }
 
-function createOrderPrice() {
+function createOrderPrice(data) {
     const orderPrice = document.createElement('div');
     orderPrice.classList.add('order-card__price');
-    orderPrice.append(createPrice());
+    orderPrice.append(createPrice(data));
 
     return orderPrice;
 }
 
-function createPrice() {
+function createPrice(data) {
     const price = document.createElement('span');
+    price.textContent = data.price;
 
     return price;
-}
-
-function createOrdersTotalPrice() {
-    const ordersTotalPrice = document.createElement('div');
-    ordersTotalPrice.classList.add('orders__totalPrice');
-    ordersTotalPrice.append(createTotalPrice());
-
-    return ordersTotalPrice;
-}
-
-function createTotalPrice() {
-    const totalPrice = document.createElement('span');
-    totalPrice.textContent = "60$";
-
-    return totalPrice;
-}
-
-function createOrdersButton() {
-    const ordersButton= document.createElement('div');
-    ordersButton.classList.add('orders__btn');
-    ordersButton.append(createBtn());
-
-    return ordersButton;
-}
-
-function createBtn() {
-    const btn = document.createElement('button');
-    btn.textContent = "Order";
-    
-    return btn;
 }
