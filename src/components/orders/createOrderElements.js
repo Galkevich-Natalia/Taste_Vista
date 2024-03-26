@@ -1,8 +1,4 @@
-import { addDishToOrdersPage } from "./addOrdersOnPage";
-
 const ordersCards = document.querySelector('.orders__cards');
-
-addDishToOrdersPage();
 
 export function addOrders(data) {
     ordersCards.append(createOrderCard(data));
