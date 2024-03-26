@@ -1,7 +1,7 @@
 import { getMenu } from "../../api/getApi";
 import { addMenu } from "./createCards";
 import { getCardDatabById } from "../../api/getApi";
-import { closeModal } from "./closeModal";
+import { setOrdersDataToStorage, getOrdersDataToStorage } from "../../utils/localStorage";
 
 export async function getCardsData(value) {
   try {
@@ -42,34 +42,34 @@ function selectedCategory(event) {
   getCardsData(dataCategory);
 }
 
-export function addModal(event) {
-  
-  if(!event.target.classList.contains('card__btn')) {
-    
-    const cardId = +event.currentTarget.id;
-    const overlay = document.querySelector('.overlay');
-    const body = document.querySelector('body');
+export function addDish(event) {
+  if(event.target.classList.contains('card__btn')) {
+      const cardId = +event.currentTarget.id;
 
-    try {
-      getCardDatabById(cardId)
-      .then(cardData => { 
-          addMenu(cardData, 'modal');
-          overlay.style.display = 'block';
-          overlay.addEventListener('click', closeModal);
-          body.classList.add('modal-open');
-      });
-      
-    } catch(error) {
-      throw error;
-    }
+      try {
+          getCardDatabById(cardId)
+          .then(dataOrder => {
+              const dataCard = getOrdersDataToStorage('Orders');
+
+              if(dataCard === null) {
+                  setOrdersDataToStorage([dataOrder]);
+              } else {
+                  const dataFromLocalStorage = getOrdersDataToStorage("Orders");
+                  dataFromLocalStorage.push(dataOrder);
+                  setOrdersDataToStorage(dataFromLocalStorage);
+              }
+          })
+      } catch(error) {
+        throw error;
+      }
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const navBtnsCategories = document.querySelectorAll(".menu__item-button");
   const defaultCategoryBtn = navBtnsCategories[0];
-
   defaultCategoryBtn.classList.add("menu__item-button_active");
+  
   getCardsData("snacks");
   getMenuByCategory();
 });

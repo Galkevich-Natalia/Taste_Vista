@@ -1,7 +1,6 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
-import { addModal } from "./card";
-import { closeModal } from "./closeModal";
-import { getCardDatabById } from "../../api/getApi";
+import { addModal, closeModal } from "../modal/modal";
+import { addDish } from "./card";
 
 const cardsContainer = document.querySelector('.cards__container');
 
@@ -68,7 +67,6 @@ function crtCardContent(data, type) {
         cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
     } else if (type === "modal"){
         cardContent.classList.add("card__content_modal")
-
         cardContent.append(crtContainerBtnClose(), crtCardName(data, type), crtCardSize(data));
         data.description !== null && cardContent.append(crtCardDescription(data));
         cardContent.append(crtCardFooter(data));
@@ -188,41 +186,4 @@ function crtCardBtn() {
     cardBtn.textContent = '+';
 
     return cardBtn;
-}
-
-function addDish(event) {
-
-    if(event.target.classList.contains('card__btn')) {
-        const cardId = +event.currentTarget.id;
-
-        try {
-            getCardDatabById(cardId)
-            .then(dataOrder => {
-
-                const dataCard = getOrdersDataToStorage('Orders');
-
-                if(dataCard === null) {
-                    const arrForDataLocalStorage = [];
-                    arrForDataLocalStorage.push(dataOrder);
-                    setOrdersDataToStorage(arrForDataLocalStorage);
-                } else {
-                    const dataFromLocalStorage = getOrdersDataToStorage("Orders");
-                    dataFromLocalStorage.push(dataOrder);
-                    setOrdersDataToStorage(dataFromLocalStorage);
-                }
-            })
-    
-        } catch(error) {
-          throw error;
-        }
-    }
-}
-
-function setOrdersDataToStorage(data) {
-    localStorage.setItem('Orders', JSON.stringify(data));
-}
-
-function getOrdersDataToStorage() {
-    const orders = localStorage.getItem('Orders');
-    return JSON.parse(orders);
 }

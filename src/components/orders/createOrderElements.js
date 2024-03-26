@@ -1,7 +1,6 @@
 const ordersWrapper = document.querySelector('.orders__wrapper');
 
 function addOrders() {
-    console.log("Hi");
     ordersWrapper.append(createOrdersTitle(), createOrdersCards(), createOrdersTotalPrice(), createOrdersButton());
 }
 
@@ -63,7 +62,7 @@ function createOrderName() {
 function createName() {
     const name = document.createElement('span');
     name.textContent = "Pizza";
-    
+
     return name;
 }
 
@@ -94,7 +93,7 @@ function createOrderPlus() {
 function createPlus() {
     const plus = document.createElement('button');
     plus.textContent = "+";
-    
+
     return plus;
 }
 
@@ -138,7 +137,7 @@ function createOrderPrice() {
 
 function createPrice() {
     const price = document.createElement('span');
-    
+
     return price;
 }
 
@@ -168,6 +167,6 @@ function createOrdersButton() {
 function createBtn() {
     const btn = document.createElement('button');
     btn.textContent = "Order";
-
+    
     return btn;
 }
