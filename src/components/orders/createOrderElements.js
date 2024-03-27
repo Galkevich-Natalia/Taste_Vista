@@ -1,3 +1,5 @@
+import { getFormatCurrency } from "../../utils/formatCurrency";
+
 const ordersCards = document.querySelector('.orders__cards');
 
 export function addOrders(data) {
@@ -83,7 +85,7 @@ function createOrderCount() {
 
 function createCount() {
     const count = document.createElement('span');
-    count.textContent = "4";
+    count.textContent = "1";
 
     return count;
 }
@@ -113,7 +115,7 @@ function createOrderPrice(data) {
 
 function createPrice(data) {
     const price = document.createElement('span');
-    price.textContent = data.price;
+    price.textContent = getFormatCurrency(data.price);
 
     return price;
 }
