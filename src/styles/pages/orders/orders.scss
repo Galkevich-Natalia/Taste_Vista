@@ -19,7 +19,7 @@
         .order {
             &-card {
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
                 align-items: center;
                 padding: 20px 0;
         
@@ -75,7 +75,7 @@
         padding: 45px 0;
         visibility: hidden;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         font-size: 25px;
     }
