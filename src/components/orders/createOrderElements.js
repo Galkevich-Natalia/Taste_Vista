@@ -55,24 +55,24 @@ function createOrderInfo(data) {
 function createOrderCounter() {
     const counter = document.createElement('div');
     counter.classList.add('order-card__counter');
-    counter.append(createOrderPlus(), createOrderCount(), createOrderMinus());
+    counter.append(createOrderMinus(), createOrderCount(), createOrderPlus());
 
     return counter;
 }
 
-function createOrderPlus() {
-    const orderPlus = document.createElement('div');
-    orderPlus.classList.add('order-card__plus');
-    orderPlus.append(createPlus());
+function createOrderMinus() {
+    const orderMinus = document.createElement('div');
+    orderMinus.classList.add('order-card__minus');
+    orderMinus.append(createMinus());
 
-    return orderPlus;
+    return orderMinus;
 }
 
-function createPlus() {
-    const plus = document.createElement('button');
-    plus.textContent = "+";
+function createMinus() {
+    const minus = document.createElement('button');
+    minus.textContent = "-";
 
-    return plus;
+    return minus;
 }
 
 function createOrderCount() {
@@ -90,19 +90,19 @@ function createCount() {
     return count;
 }
 
-function createOrderMinus() {
-    const orderMinus = document.createElement('div');
-    orderMinus.classList.add('order-card__minus');
-    orderMinus.append(createMinus());
+function createOrderPlus() {
+    const orderPlus = document.createElement('div');
+    orderPlus.classList.add('order-card__plus');
+    orderPlus.append(createPlus());
 
-    return orderMinus;
+    return orderPlus;
 }
 
-function createMinus() {
-    const minus = document.createElement('button');
-    minus.textContent = "-";
+function createPlus() {
+    const plus = document.createElement('button');
+    plus.textContent = "+";
 
-    return minus;
+    return plus;
 }
 
 function createOrderPrice(data) {

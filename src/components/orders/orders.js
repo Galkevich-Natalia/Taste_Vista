@@ -13,12 +13,10 @@ function getTotalPrice() {
     const ordersMessage = document.querySelector('.orders__message');
     const ordersFooter = document.querySelector('.orders__footer');
 
-    let resultPrice = 0;
-
     if(dataFromLocalStorage !== null) {
         ordersMessage.style.display = 'none';
         ordersFooter.style.display = 'block';
-        resultPrice = dataFromLocalStorage.reduce((acc, item) => acc + item.price, 0.0);
+        const resultPrice = dataFromLocalStorage.reduce((acc, item) => acc + item.price, 0.0);
         totalPriceValue.textContent = getFormatCurrency(resultPrice);
     }
 }
