@@ -5,26 +5,25 @@ import { getFormatCurrency } from "../../utils/formatCurrency";
 function addDishToOrdersPage() {
     const dataFromLocalStorage = getOrdersDataToStorage('Orders');
     dataFromLocalStorage.forEach((obj) => addOrders(obj));
-    getTotalPrice();
 }
 
-addDishToOrdersPage();
-
 function getTotalPrice() {
-    const totalPrice = document.querySelector('.orders__totalPrice');
-    const totalPriceValue = document.querySelector('.orders__totalPrice-title-value');
+    const totalPriceValue = document.querySelector('.orders__footer-totalPrice-title-value');
     const dataFromLocalStorage = getOrdersDataToStorage('Orders');
     const ordersMessage = document.querySelector('.orders__message');
-    const btnOrders = document.querySelector('.orders__btn');
+    const ordersFooter = document.querySelector('.orders__footer');
 
     let resultPrice = 0;
 
     if(dataFromLocalStorage !== null) {
         ordersMessage.style.display = 'none';
-        totalPrice.style.visibility = 'visible';
-        btnOrders.style.display = 'block';
-
-        dataFromLocalStorage.forEach((item) => resultPrice += item.price);
+        ordersFooter.style.display = 'block';
+        resultPrice = dataFromLocalStorage.reduce((acc, item) => acc + item.price, 0.0);
         totalPriceValue.textContent = getFormatCurrency(resultPrice);
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    addDishToOrdersPage();
+    getTotalPrice();
+})
