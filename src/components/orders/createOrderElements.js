@@ -1,3 +1,5 @@
+import { getFormatCurrency } from "../../utils/formatCurrency";
+
 const ordersCards = document.querySelector('.orders__cards');
 
 export function addOrders(data) {
@@ -53,39 +55,9 @@ function createOrderInfo(data) {
 function createOrderCounter() {
     const counter = document.createElement('div');
     counter.classList.add('order-card__counter');
-    counter.append(createOrderPlus(), createOrderCount(), createOrderMinus());
+    counter.append(createOrderMinus(), createOrderCount(), createOrderPlus());
 
     return counter;
-}
-
-function createOrderPlus() {
-    const orderPlus = document.createElement('div');
-    orderPlus.classList.add('order-card__plus');
-    orderPlus.append(createPlus());
-
-    return orderPlus;
-}
-
-function createPlus() {
-    const plus = document.createElement('button');
-    plus.textContent = "+";
-
-    return plus;
-}
-
-function createOrderCount() {
-    const orderCount = document.createElement('div');
-    orderCount.classList.add('order-card__count');
-    orderCount.append(createCount());
-
-    return orderCount;
-}
-
-function createCount() {
-    const count = document.createElement('span');
-    count.textContent = "4";
-
-    return count;
 }
 
 function createOrderMinus() {
@@ -103,6 +75,36 @@ function createMinus() {
     return minus;
 }
 
+function createOrderCount() {
+    const orderCount = document.createElement('div');
+    orderCount.classList.add('order-card__count');
+    orderCount.append(createCount());
+
+    return orderCount;
+}
+
+function createCount() {
+    const count = document.createElement('span');
+    count.textContent = "1";
+
+    return count;
+}
+
+function createOrderPlus() {
+    const orderPlus = document.createElement('div');
+    orderPlus.classList.add('order-card__plus');
+    orderPlus.append(createPlus());
+
+    return orderPlus;
+}
+
+function createPlus() {
+    const plus = document.createElement('button');
+    plus.textContent = "+";
+
+    return plus;
+}
+
 function createOrderPrice(data) {
     const orderPrice = document.createElement('div');
     orderPrice.classList.add('order-card__price');
@@ -113,7 +115,7 @@ function createOrderPrice(data) {
 
 function createPrice(data) {
     const price = document.createElement('span');
-    price.textContent = data.price;
+    price.textContent = getFormatCurrency(data.price);
 
     return price;
 }
