@@ -43,10 +43,11 @@
                     display: flex;
                 }
         
-                &__plus,
-                &__minus {
+                &__container-minus,
+                &__container-plus {
         
-                    button {
+                    .order-card__btn-minus,
+                    .order-card__btn-plus {
                         color: white;
                         font-size: 20px;
                     }
