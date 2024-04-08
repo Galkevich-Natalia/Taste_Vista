@@ -25,12 +25,12 @@ function getTotalPrice() {
 }
 
 export function incrementCounter(event) {
-    const dataFromLocalStorage = getOrdersDataToStorage('Orders');
-    const eventBtn = event.target;
-    const valueCount = eventBtn.parentNode.parentNode.childNodes[1].children[0];
-
     if (event.target.classList.contains('order-card__btn-plus')) {
+        const dataFromLocalStorage = getOrdersDataToStorage('Orders');
+        const eventBtn = event.target;
         const orderCardId = +event.currentTarget.id;
+        const valueCount = eventBtn.parentNode.parentNode.childNodes[1].children[0];
+
         dataFromLocalStorage.forEach(item => {
             if (item.id === orderCardId) {
                 item.count += 1;
@@ -42,13 +42,13 @@ export function incrementCounter(event) {
 }
 
 export function decrementCounter(event) {
-    const dataFromLocalStorage = getOrdersDataToStorage('Orders');
-    const eventBtn = event.target;
-    const orderCard = eventBtn.parentNode.parentNode.parentNode.parentNode;
-    const valueCount = eventBtn.parentNode.parentNode.childNodes[1].children[0];
-
     if (event.target.classList.contains('order-card__btn-minus')) {
-        const orderCardId = +event.currentTarget.id;
+        const dataFromLocalStorage = getOrdersDataToStorage('Orders');
+        const eventBtn = event.target;
+        const orderCard = event.currentTarget;
+        const orderCardId = +orderCard.id;
+        const valueCount = eventBtn.parentNode.parentNode.childNodes[1].children[0];
+
         dataFromLocalStorage.forEach(item => {
             if (item.id === orderCardId) {
                 if (item.count > 1) {
