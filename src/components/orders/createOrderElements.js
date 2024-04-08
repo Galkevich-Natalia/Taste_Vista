@@ -1,4 +1,5 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
+import { incrementCounter, decrementCounter } from "./orders";
 
 const ordersCards = document.querySelector('.orders__cards');
 
@@ -9,7 +10,10 @@ export function addOrders(data) {
 function createOrderCard(data) {
     const orderCard = document.createElement('div');
     orderCard.classList.add('order-card');
+    orderCard.id = data.id;
     orderCard.append(createOrderImage(data), createOrderName(data), createOrderInfo(data));
+    orderCard.addEventListener('click', incrementCounter);
+    orderCard.addEventListener('click', decrementCounter);
 
     return orderCard;
 }
@@ -47,62 +51,65 @@ function createName(data) {
 function createOrderInfo(data) {
     const info = document.createElement('div');
     info.classList.add('order-card__info');
-    info.append(createOrderCounter(), createOrderPrice(data));
+    info.append(createOrderCounter(data), createOrderPrice(data));
 
     return info;
 }
 
-function createOrderCounter() {
+function createOrderCounter(data) {
     const counter = document.createElement('div');
     counter.classList.add('order-card__counter');
-    counter.append(createOrderMinus(), createOrderCount(), createOrderPlus());
+    counter.append(createOrderMinus(), createOrderCount(data), createOrderPlus());
 
     return counter;
 }
 
 function createOrderMinus() {
     const orderMinus = document.createElement('div');
-    orderMinus.classList.add('order-card__minus');
+    orderMinus.classList.add('order-card__container-minus');
     orderMinus.append(createMinus());
 
     return orderMinus;
 }
 
 function createMinus() {
-    const minus = document.createElement('button');
-    minus.textContent = "-";
+    const btnMinus = document.createElement('button');
+    btnMinus.classList.add('order-card__btn-minus')
+    btnMinus.textContent = "-";
 
-    return minus;
+    return btnMinus;
 }
 
-function createOrderCount() {
+function createOrderCount(data) {
     const orderCount = document.createElement('div');
     orderCount.classList.add('order-card__count');
-    orderCount.append(createCount());
+    orderCount.append(createCount(data));
 
     return orderCount;
 }
 
-function createCount() {
+function createCount(data) {
     const count = document.createElement('span');
-    count.textContent = "1";
+    count.classList.add('order-card__count-value')
+    count.textContent = data.count;
 
     return count;
 }
 
 function createOrderPlus() {
     const orderPlus = document.createElement('div');
-    orderPlus.classList.add('order-card__plus');
+    orderPlus.classList.add('order-card__container-plus');
     orderPlus.append(createPlus());
 
     return orderPlus;
 }
 
 function createPlus() {
-    const plus = document.createElement('button');
-    plus.textContent = "+";
+    const btnPlus = document.createElement('button');
+    btnPlus.classList.add('order-card__btn-plus');
+    btnPlus.textContent = "+";
 
-    return plus;
+    return btnPlus;
 }
 
 function createOrderPrice(data) {

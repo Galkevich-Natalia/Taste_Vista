@@ -13,7 +13,7 @@ export async function getCardsData(value) {
     arrCardsByCategory.forEach((obj) => addMenu(obj, 'ordinary'));
 
   } catch (e) {
-      console.error("error", e);
+    console.error("error", e);
     throw e;
   }
 }
@@ -43,25 +43,37 @@ function selectedCategory(event) {
 }
 
 export function addDish(event) {
-  if(event.target.classList.contains('card__btn')) {
-      const cardId = +event.currentTarget.id;
+  if (event.target.classList.contains('card__btn')) {
+    const cardId = +event.currentTarget.id;
 
-      try {
-          getCardDatabById(cardId)
-          .then(dataOrder => {
-              const dataCard = getOrdersDataToStorage('Orders');
+    try {
+      getCardDatabById(cardId)
+        .then(dataOrder => {
+          const dataCard = getOrdersDataToStorage('Orders');
 
-              if(dataCard === null) {
-                  setOrdersDataToStorage([dataOrder]);
-              } else {
-                  const dataFromLocalStorage = getOrdersDataToStorage("Orders");
-                  dataFromLocalStorage.push(dataOrder);
-                  setOrdersDataToStorage(dataFromLocalStorage);
-              }
-          })
-      } catch(error) {
-        throw error;
-      }
+          if (dataCard === null) {
+            dataOrder.count = 1;
+            setOrdersDataToStorage([dataOrder]);
+          } else {
+            const dataFromLocalStorage = getOrdersDataToStorage("Orders");
+            const isObject = dataFromLocalStorage.find(item => item.id === dataOrder.id)
+
+            if (isObject === undefined) {
+              dataOrder.count = 1;
+              dataFromLocalStorage.push(dataOrder);
+            } else {
+              dataFromLocalStorage.forEach(item => {
+                if (item.id === dataOrder.id) {
+                  item.count += 1;
+                }
+              });
+            }
+            setOrdersDataToStorage(dataFromLocalStorage);
+          }
+        })
+    } catch (error) {
+      throw error;
+    }
   }
 }
 
@@ -69,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navBtnsCategories = document.querySelectorAll(".menu__item-button");
   const defaultCategoryBtn = navBtnsCategories[0];
   defaultCategoryBtn.classList.add("menu__item-button_active");
-  
+
   getCardsData("snacks");
   getMenuByCategory();
 });
