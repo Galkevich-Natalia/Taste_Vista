@@ -1,4 +1,5 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
+import { incrementCounter, decrementCounter } from "./orders";
 
 const ordersCards = document.querySelector('.orders__cards');
 
@@ -11,6 +12,8 @@ function createOrderCard(data) {
     orderCard.classList.add('order-card');
     orderCard.id = data.id;
     orderCard.append(createOrderImage(data), createOrderName(data), createOrderInfo(data));
+    orderCard.addEventListener('click', incrementCounter);
+    orderCard.addEventListener('click', decrementCounter);
 
     return orderCard;
 }
@@ -87,7 +90,7 @@ function createOrderCount(data) {
 
 function createCount(data) {
     const count = document.createElement('span');
-    count.classList.add('order-card__count')
+    count.classList.add('order-card__count-value')
     count.textContent = data.count;
 
     return count;
