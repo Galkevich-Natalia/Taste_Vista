@@ -16,8 +16,8 @@ function getTotalPrice() {
     if (dataFromLocalStorage !== null && dataFromLocalStorage.length !== 0) {
         ordersMessage.style.display = 'none';
         ordersFooter.style.display = 'block';
-        const resultPrice = dataFromLocalStorage.reduce((acc, item) => acc + item.price, 0);
-        totalPriceValue.textContent = getFormatCurrency(resultPrice);
+        const totalPriceDishes = dataFromLocalStorage.reduce((acc, item) => acc + (item.price * item.count), 0);
+        totalPriceValue.textContent = getFormatCurrency(totalPriceDishes);
     } else {
         ordersMessage.style.display = 'block';
         ordersFooter.style.display = 'none';
@@ -27,15 +27,18 @@ function getTotalPrice() {
 export function incrementCounter(event) {
     if (event.target.classList.contains('order-card__btn-plus')) {
         const dataFromLocalStorage = getOrdersDataToStorage('Orders');
-        const eventBtn = event.target;
-        const orderCardId = +event.currentTarget.id;
-        const valueCount = eventBtn.parentNode.parentNode.childNodes[1].children[0];
+        const orderCard = event.currentTarget;
+        const orderCardId = +orderCard.id;
+        const valueCount = orderCard.children[2].children[0].childNodes[1].children[0];
+        const valueTotalPriceDish = orderCard.children[2].children[1].children[0];
 
         dataFromLocalStorage.forEach(item => {
             if (item.id === orderCardId) {
                 item.count += 1;
                 valueCount.textContent = item.count;
-                setOrdersDataToStorage(dataFromLocalStorage)
+                setOrdersDataToStorage(dataFromLocalStorage);
+                getTotalPriceForOneDish(valueTotalPriceDish, item);
+                getTotalPrice();
             }
         });
     }
@@ -44,17 +47,19 @@ export function incrementCounter(event) {
 export function decrementCounter(event) {
     if (event.target.classList.contains('order-card__btn-minus')) {
         const dataFromLocalStorage = getOrdersDataToStorage('Orders');
-        const eventBtn = event.target;
         const orderCard = event.currentTarget;
         const orderCardId = +orderCard.id;
-        const valueCount = eventBtn.parentNode.parentNode.childNodes[1].children[0];
+        const valueCount = orderCard.children[2].children[0].children[1].children[0];
+        const valueTotalPriceDish = orderCard.children[2].children[1].children[0];
 
         dataFromLocalStorage.forEach(item => {
             if (item.id === orderCardId) {
                 if (item.count > 1) {
                     item.count -= 1;
                     valueCount.textContent = item.count;
-                    setOrdersDataToStorage(dataFromLocalStorage)
+                    setOrdersDataToStorage(dataFromLocalStorage);
+                    getTotalPriceForOneDish(valueTotalPriceDish, item);
+                    getTotalPrice();
                 }
                 else {
                     removeOrderCard(orderCard, orderCardId);
@@ -63,6 +68,11 @@ export function decrementCounter(event) {
             }
         });
     }
+}
+
+function getTotalPriceForOneDish(valueTotalPriceDish, item) {
+    const resultPriceDish = item.price * item.count;
+    valueTotalPriceDish.textContent = getFormatCurrency(resultPriceDish);
 }
 
 function removeOrderCard(orderCard, orderCardId) {

@@ -51,7 +51,7 @@ function createName(data) {
 function createOrderInfo(data) {
     const info = document.createElement('div');
     info.classList.add('order-card__info');
-    info.append(createOrderCounter(data), createOrderPrice(data));
+    info.append(createOrderCounter(data), createOrderPriceContainer(data));
 
     return info;
 }
@@ -112,17 +112,19 @@ function createPlus() {
     return btnPlus;
 }
 
-function createOrderPrice(data) {
-    const orderPrice = document.createElement('div');
-    orderPrice.classList.add('order-card__price');
-    orderPrice.append(createPrice(data));
+function createOrderPriceContainer(data) {
+    const orderPriceContainer = document.createElement('div');
+    orderPriceContainer.classList.add('order-card__price');
+    orderPriceContainer.append(createOrderPriceValue(data));
 
-    return orderPrice;
+    return orderPriceContainer;
 }
 
-function createPrice(data) {
-    const price = document.createElement('span');
-    price.textContent = getFormatCurrency(data.price);
+function createOrderPriceValue(data) {
+    const orderPriceValue = document.createElement('span');
+    orderPriceValue.classList.add('.order-card__price-value')
+    const totalPriceDish = data.price * data.count
+    orderPriceValue.textContent = getFormatCurrency(totalPriceDish);
 
-    return price;
+    return orderPriceValue;
 }
