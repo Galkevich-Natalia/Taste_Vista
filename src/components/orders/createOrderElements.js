@@ -124,7 +124,7 @@ function createOrderPriceValue(data) {
     const orderPriceValue = document.createElement('span');
     orderPriceValue.classList.add('.order-card__price-value')
     const totalPriceDish = data.price * data.count
-    orderPriceValue.textContent = totalPriceDish;
+    orderPriceValue.textContent = getFormatCurrency(totalPriceDish);
 
     return orderPriceValue;
 }
