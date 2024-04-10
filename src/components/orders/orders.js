@@ -30,13 +30,14 @@ export function incrementCounter(event) {
         const orderCard = event.currentTarget;
         const orderCardId = +orderCard.id;
         const valueCount = orderCard.children[2].children[0].childNodes[1].children[0];
+        const valueTotalPriceDish = orderCard.children[2].children[1].children[0];
 
         dataFromLocalStorage.forEach(item => {
             if (item.id === orderCardId) {
                 item.count += 1;
                 valueCount.textContent = item.count;
                 setOrdersDataToStorage(dataFromLocalStorage);
-                getTotalPriceForOneDish(event, item);
+                getTotalPriceForOneDish(valueTotalPriceDish, item);
                 getTotalPrice();
             }
         });
@@ -49,6 +50,7 @@ export function decrementCounter(event) {
         const orderCard = event.currentTarget;
         const orderCardId = +orderCard.id;
         const valueCount = orderCard.children[2].children[0].children[1].children[0];
+        const valueTotalPriceDish = orderCard.children[2].children[1].children[0];
 
         dataFromLocalStorage.forEach(item => {
             if (item.id === orderCardId) {
@@ -56,7 +58,7 @@ export function decrementCounter(event) {
                     item.count -= 1;
                     valueCount.textContent = item.count;
                     setOrdersDataToStorage(dataFromLocalStorage);
-                    getTotalPriceForOneDish(event, item);
+                    getTotalPriceForOneDish(valueTotalPriceDish, item);
                     getTotalPrice();
                 }
                 else {
@@ -68,10 +70,7 @@ export function decrementCounter(event) {
     }
 }
 
-function getTotalPriceForOneDish(event, item) {
-    const orderCard = event.currentTarget;
-    const valueTotalPriceDish = orderCard.children[2].children[1].children[0];
-
+function getTotalPriceForOneDish(valueTotalPriceDish, item) {
     const resultPriceDish = item.price * item.count;
     valueTotalPriceDish.textContent = getFormatCurrency(resultPriceDish);
 }
