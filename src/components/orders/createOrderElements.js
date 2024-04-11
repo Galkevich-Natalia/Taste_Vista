@@ -1,5 +1,6 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
 import { incrementCounter, decrementCounter } from "./orders";
+import { removeOrderCardByBtnCLose } from "../../components/orders/orders";
 
 const ordersCards = document.querySelector('.orders__cards');
 
@@ -11,7 +12,7 @@ function createOrderCard(data) {
     const orderCard = document.createElement('div');
     orderCard.classList.add('order-card');
     orderCard.id = data.id;
-    orderCard.append(createOrderImage(data), createOrderName(data), createOrderInfo(data));
+    orderCard.append(createOrderImage(data), createOrderName(data), createOrderInfo(data), createOrderBtnCloseContainer());
     orderCard.addEventListener('click', incrementCounter);
     orderCard.addEventListener('click', decrementCounter);
 
@@ -122,9 +123,25 @@ function createOrderPriceContainer(data) {
 
 function createOrderPriceValue(data) {
     const orderPriceValue = document.createElement('span');
-    orderPriceValue.classList.add('.order-card__price-value')
+    orderPriceValue.classList.add('order-card__price-value')
     const totalPriceDish = data.price * data.count
     orderPriceValue.textContent = getFormatCurrency(totalPriceDish);
 
     return orderPriceValue;
+}
+
+function createOrderBtnCloseContainer() {
+    const orderBtnCloseContainer = document.createElement('div');
+    orderBtnCloseContainer.classList.add('order-card__btnClose-container');
+    orderBtnCloseContainer.append(createOrderBtnClose());
+
+    return orderBtnCloseContainer;
+}
+
+function createOrderBtnClose() {
+    const orderBtnClose = document.createElement('button');
+    orderBtnClose.classList.add('order-card__btnClose');
+    orderBtnClose.addEventListener('click', removeOrderCardByBtnCLose);
+
+    return orderBtnClose;
 }

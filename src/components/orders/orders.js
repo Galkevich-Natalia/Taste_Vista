@@ -82,6 +82,14 @@ function removeOrderCard(orderCard, orderCardId) {
     setOrdersDataToStorage(delElemFromLStorage);
 }
 
+export function removeOrderCardByBtnCLose(event) {
+    const orderCard = event.target.parentNode.parentNode;
+    const orderCardId = +orderCard.id;
+
+    removeOrderCard(orderCard, orderCardId);
+    getTotalPrice();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     addDishToOrdersPage();
     getTotalPrice();
