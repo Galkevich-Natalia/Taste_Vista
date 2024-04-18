@@ -1,6 +1,7 @@
 import { getOrdersDataToStorage, setOrdersDataToStorage } from "../../utils/localStorage";
 import { addOrders } from "./createOrderElements";
 import { getFormatCurrency } from "../../utils/formatCurrency";
+import { getDishesOnCheckoutPage } from "../checkout/checkout";
 
 function addDishToOrdersPage() {
     const dataFromLocalStorage = getOrdersDataToStorage('Orders');

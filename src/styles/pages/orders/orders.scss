@@ -1,6 +1,6 @@
 .orders {
     &__wrapper {
-        width: 800px;
+        max-width: 800px;
         padding: 50px 0;
         margin: 0 auto;
         display: flex;
@@ -124,12 +124,12 @@
             font-size: 25px;
         }
     
-        &-btn {
+        &-btn-container {
             padding: 25px 0;
             display: flex;
             justify-content: center;
         
-            button {
+            a {
                 width: 100px;
                 padding: 5px 0;
                 background-color: #cf3432;
@@ -138,6 +138,7 @@
                 font-size: 20px;
                 color: white;
                 transition: transform 0.3s ease;
+                text-align: center;
     
                 &:hover {
                     cursor: pointer;
