@@ -1,8 +1,9 @@
+import { getFormatCurrency } from './../../utils/formatCurrency';
 
 const checkoutList = document.querySelector('.checkout__block-list');
 
 export function addItemToCheckoutList(data) {
-   checkoutList.append(createCheckoutListItem(data));
+    checkoutList.append(createCheckoutListItem(data));
 }
 
 function createCheckoutListItem(data) {
@@ -17,22 +18,22 @@ function createCheckoutItemName(data) {
     const checkoutItemName = document.createElement('h5');
     checkoutItemName.classList.add('checkout__block-list-item-name');
     checkoutItemName.textContent = data.name;
-    
+
     return checkoutItemName;
 }
 
 function createCheckoutItemCount(data) {
     const checkoutItemCount = document.createElement('h5');
     checkoutItemCount.classList.add('checkout__block-list-item-count');
-    checkoutItemCount.textContent = data.count;  
-    
+    checkoutItemCount.textContent = data.count;
+
     return checkoutItemCount;
 }
 
 function createCheckoutItemTotalPrice(data) {
     const checkoutItemTotalPrice = document.createElement('h5');
     checkoutItemTotalPrice.classList.add('checkout__block-list-item-price');
-    checkoutItemTotalPrice.textContent = data.price * data.count;
-    
+    checkoutItemTotalPrice.textContent = getFormatCurrency(data.price * data.count);
+
     return checkoutItemTotalPrice;
 }
