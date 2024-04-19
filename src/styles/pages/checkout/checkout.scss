@@ -3,7 +3,7 @@
     &__wrapper {
         padding: 100px 0;
         display: flex;
-        gap: 60px;
+        gap: 100px;
     }
 
     &__title {
@@ -19,10 +19,14 @@
         flex-direction: column;
 
         &-wrap {
-            
-            padding: 10px 40px 20px 40px;
+            padding: 10px 40px 40px 40px;
             border: 2px solid white;
             border-radius: 30px;
+        }
+
+        input {
+            border-radius: 10px;
+            padding: 5px 8px;
         }
     }
 
@@ -45,16 +49,28 @@
         &-list-item {
             padding: 15px 0;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 70% 10% 20%;
             align-items: center;
             justify-items: center;
-            font-size: 21px;
-            font-weight: 500;
+
+            span {
+                font-size: 17px;
+                font-weight: 500;
+            }
+
+            &-name {
+                margin-right: auto;
+            }
+
+            &-count,
+            &-price {
+                margin-left: auto;
+            }
         }
         
         &-totalPrice {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             padding: 40px 0;
 
@@ -63,12 +79,11 @@
             }
 
             &-value {
-                font-size: 25px;
+                font-size: 22px;
             }
         }
 
         &-btn-container {
-            padding: 25px 0;
             display: flex;
             justify-content: center;
     

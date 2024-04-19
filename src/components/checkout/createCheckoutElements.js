@@ -15,7 +15,7 @@ function createCheckoutListItem(data) {
 }
 
 function createCheckoutItemName(data) {
-    const checkoutItemName = document.createElement('h5');
+    const checkoutItemName = document.createElement('span');
     checkoutItemName.classList.add('checkout__block-list-item-name');
     checkoutItemName.textContent = data.name;
 
@@ -23,7 +23,7 @@ function createCheckoutItemName(data) {
 }
 
 function createCheckoutItemCount(data) {
-    const checkoutItemCount = document.createElement('h5');
+    const checkoutItemCount = document.createElement('span');
     checkoutItemCount.classList.add('checkout__block-list-item-count');
     checkoutItemCount.textContent = data.count;
 
@@ -31,7 +31,7 @@ function createCheckoutItemCount(data) {
 }
 
 function createCheckoutItemTotalPrice(data) {
-    const checkoutItemTotalPrice = document.createElement('h5');
+    const checkoutItemTotalPrice = document.createElement('span');
     checkoutItemTotalPrice.classList.add('checkout__block-list-item-price');
     checkoutItemTotalPrice.textContent = getFormatCurrency(data.price * data.count);
 
