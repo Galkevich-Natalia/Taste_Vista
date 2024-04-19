@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/index.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans&display=swap" rel="stylesheet">
+
+    <title>Taste Vista</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__logo">
+                    <span class="logo">Taste Vista</span>
+                </div>
+                <nav class="header__nav">
+                    <ul class="header__menu">
+                        <li>
+                            <a href="/index.html">Main</a>
+                        </li>
+                        <li>
+                            <a href="./menu.html">Menu</a>
+                        </li>
+                        <li>
+                            <a href="./delivery.html">Delivery</a>
+                        </li>
+                        <li>
+                            <a href="./contacts.html">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="checkout">
+        <div class="container">
+            <div class="checkout__wrapper">
+                <div class="checkout__block">
+                    <div class="checkout__title">
+                        <h3>Checkout</h3>
+                    </div>
+                    <div class="checkout__form">
+                        <div class="checkout__form-wrap">
+                            <div class="checkout__block-title">
+                                <h4>Contacts</h4>
+                            </div>
+                            <div class="checkout__block-form-wrap">
+                                <form class="checkout__form checkout__form-contacts">
+                                    <label class="checkout__label">Name</label>
+                                    <input class="checkout__input" type="text">
+                                    <label class="checkout__label">Phone</label>
+                                    <input class="checkout__input" type="phone">
+                                </form>
+                            </div>
+                            <div class="checkout__block-title">
+                                <h4>Adress</h4>
+                            </div>
+                            <div class="checkout__block-form-wrap">
+                                <form class="checkout__form checkout__form-adress">
+                                    <label class="checkout__label">City</label>
+                                    <input class="checkout__input" type="text">
+                                    <label class="checkout__label">Street</label>
+                                    <input class="checkout__input" type="text">
+                                    <label class="checkout__label">House</label>
+                                    <input class="checkout__input" type="number">
+                                    <label class="checkout__label">Apartment</label>
+                                    <input class="checkout__input" type="number">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout__block">
+                    <div class="checkout__title">
+                        <h3>Order</h3>
+                    </div>
+                    <div class="checkout__form">
+                        <div class="checkout__form-wrap">
+                            <div class="checkout__block-title">
+                                <h4>Your order:</h4>
+                            </div>
+                            <div class="checkout__block-list-wrap">
+                                <ul class="checkout__block-list"></ul>
+                            </div>
+                            <div class="checkout__block-totalPrice">
+                                <div class="checkout__block-totalPrice-title">
+                                    <h4>Total price:</h4>
+                                </div>
+                                <div class="checkout__block-totalPrice-value">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="checkout__block-btn-container">
+                                <button>Order</button>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <nav class="footer__nav">
+                    <ul class="footer__menu">
+                        <li>
+                            <a href="/src/pages/aboutUs.html">About us</a>
+                        </li>
+                        <li>
+                            <a href="/src/pages/workingHours.html">Working Hours</a>
+                        </li>
+                        <li>
+                            <a href="/src/pages/socialMedia.html">Social Media</a>
+                        </li>
+                        <li>
+                            <a href="/src/pages/policy.html">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer__copyright">
+                    <span class="copyright">© 2024 Taste Vista. All Rights Reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/src/components/checkout/checkout.js"></script>
+
+</body>
+</html>    
