@@ -15,10 +15,10 @@ function getCheckoutTotalPrice() {
     totalPriceValue.textContent = getFormatCurrency(checkoutTotalPrice);
 }
 
+const checkoutBtnOrder = document.querySelector('.checkout__block-btn');
+checkoutBtnOrder.addEventListener('click', validateForm);
+
 document.addEventListener("DOMContentLoaded", () => {
     getDishesOnCheckoutPage();
     getCheckoutTotalPrice();
 })
-
-const checkoutBtnOrder = document.querySelector('.checkout__block-btn');
-checkoutBtnOrder.addEventListener('click', validateForm);
