@@ -1,7 +1,7 @@
 import { getOrdersDataToStorage } from "../../utils/localStorage";
 import { addItemToCheckoutList } from "./createCheckoutElements";
 import { getFormatCurrency } from "../../utils/formatCurrency";
-import { validateForm } from "../validation/validation";
+import { checkValidation } from "../validation/validation";
 
 function getDishesOnCheckoutPage() {
     const dataFromLocalStorage = getOrdersDataToStorage('Orders');
@@ -16,7 +16,7 @@ function getCheckoutTotalPrice() {
 }
 
 const checkoutBtnOrder = document.querySelector('.checkout__block-btn');
-checkoutBtnOrder.addEventListener('click', validateForm);
+checkoutBtnOrder.addEventListener('click', checkValidation);
 
 document.addEventListener("DOMContentLoaded", () => {
     getDishesOnCheckoutPage();
