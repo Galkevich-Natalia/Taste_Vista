@@ -7,8 +7,10 @@ function validateName() {
     if (!re.test(name)) {
         messageName.textContent = 'Проверьте данные Name';
         messageName.style.color = "red";
+        return false;
     } else {
         messageName.textContent = '';
+        return true;
     }
 }
 
@@ -21,8 +23,10 @@ function validatePhone() {
     if (!re.test(phone)) {
         messagePhone.textContent = 'Проверьте данные Phone';
         messagePhone.style.color = "red";
+        return false;
     } else {
         messagePhone.textContent = '';
+        return true;
     }
 }
 
@@ -35,8 +39,10 @@ function validateEmail() {
     if (!re.test(email)) {
         messageEmail.textContent = 'Проверьте данные Email';
         messageEmail.style.color = "red";
+        return false;
     } else {
         messageEmail.textContent = '';
+        return true;
     }
 }
 
@@ -49,8 +55,10 @@ function validateCity() {
     if (!re.test(city)) {
         messageCity.textContent = 'Проверьте данные City';
         messageCity.style.color = "red";
+        return false;
     } else {
         messageCity.textContent = '';
+        return true;
     }
 }
 
@@ -63,8 +71,10 @@ function validateStreet() {
     if (!re.test(street)) {
         messageStreet.textContent = 'Проверьте данные Street';
         messageStreet.style.color = "red";
+        return false;
     } else {
         messageStreet.textContent = '';
+        return true;
     }
 }
 
@@ -77,8 +87,10 @@ function validateHouse() {
     if (!re.test(house)) {
         messageHouse.textContent = 'Проверьте данные House';
         messageHouse.style.color = "red";
+        return false;
     } else {
         messageHouse.textContent = '';
+        return true;
     }
 }
 
@@ -91,17 +103,39 @@ function validateApartment() {
     if (!re.test(apartment)) {
         messageApartment.textContent = 'Проверьте данные Apartment';
         messageApartment.style.color = "red";
+        return false;
     } else {
         messageApartment.textContent = '';
+        return true;
     }
 }
 
 export function validateForm() {
-    validateName();
-    validatePhone();
-    validateEmail();
-    validateCity();
-    validateStreet();
-    validateHouse();
-    validateApartment();
+    const checkoutModal = document.querySelector('.checkout__modal');
+    const overlayCheckout = document.querySelector('.overlayCheckout');
+    const body = document.querySelector('body');
+    const arrayCalls = [validateName(), validatePhone(), validateEmail(), validateCity(), validateStreet(), validateHouse(), validateApartment()];
+
+    const isValidResult = arrayCalls.every((item) => item === true)
+
+    if (isValidResult) {
+        checkoutModal.style.display = 'block';
+        overlayCheckout.style.display = 'block';
+        body.classList.add('checkout__modal-open');
+    }
+}
+
+const checkoutModalBtnClose = document.querySelector('.checkout__modal-btn');
+checkoutModalBtnClose.addEventListener('click', closeCheckoutModal);
+
+function closeCheckoutModal(event) {
+    const checkoutModal = document.querySelector('.checkout__modal');
+    const overlayCheckout = document.querySelector('.overlayCheckout');
+    const body = document.querySelector('body');
+
+    checkoutModal.remove();
+    overlayCheckout.style.display = 'none';
+    body.classList.remove('checkout__modal-open');
+
+    window.location.href = "menu.html";
 }
