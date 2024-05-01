@@ -2,7 +2,7 @@ import { getOrdersDataToStorage } from "../../utils/localStorage";
 import { addItemToCheckoutList } from "./createCheckoutElements";
 import { getFormatCurrency } from "../../utils/formatCurrency";
 import { validateForm } from "../validation/validation";
-import { clearLocalStorage } from "../../utils/localStorage";
+import { removeItemToStorage } from "../../utils/localStorage";
 
 const checkoutBtnOrder = document.querySelector('.checkout__block-btn');
 const checkoutModalBtnClose = document.querySelector('.checkout__modal-btn');
@@ -44,7 +44,7 @@ export function closeCheckoutModal() {
     body.classList.remove('checkout__modal-open');
 
     window.location.href = "menu.html";
-    clearLocalStorage();
+    removeItemToStorage();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
