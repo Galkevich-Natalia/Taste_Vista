@@ -1,6 +1,13 @@
 import { getOrdersDataToStorage } from "../../utils/localStorage";
 import { addItemToCheckoutList } from "./createCheckoutElements";
 import { getFormatCurrency } from "../../utils/formatCurrency";
+import { validateForm } from "../validation/validation";
+
+const checkoutBtnOrder = document.querySelector('.checkout__block-btn');
+const checkoutModalBtnClose = document.querySelector('.checkout__modal-btn');
+
+checkoutBtnOrder.addEventListener('click', getOrder);
+checkoutModalBtnClose.addEventListener('click', closeCheckoutModal);
 
 function getDishesOnCheckoutPage() {
     const dataFromLocalStorage = getOrdersDataToStorage('Orders');
@@ -12,6 +19,30 @@ function getCheckoutTotalPrice() {
     const dataFromLocalStorage = getOrdersDataToStorage("Orders");
     const checkoutTotalPrice = dataFromLocalStorage.reduce((acc, item) => acc + (item.price * item.count), 0);
     totalPriceValue.textContent = getFormatCurrency(checkoutTotalPrice);
+}
+
+function getOrder() {
+    if (validateForm()) {
+        const checkoutModal = document.querySelector('.checkout__modal');
+        const overlayCheckout = document.querySelector('.overlayCheckout');
+        const body = document.querySelector('body');
+
+        checkoutModal.style.display = 'block';
+        overlayCheckout.style.display = 'block';
+        body.classList.add('checkout__modal-open');
+    }
+}
+
+export function closeCheckoutModal() {
+    const checkoutModal = document.querySelector('.checkout__modal');
+    const overlayCheckout = document.querySelector('.overlayCheckout');
+    const body = document.querySelector('body');
+
+    checkoutModal.remove();
+    overlayCheckout.style.display = 'none';
+    body.classList.remove('checkout__modal-open');
+
+    window.location.href = "menu.html";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
