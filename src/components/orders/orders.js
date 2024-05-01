@@ -90,6 +90,8 @@ export function removeOrderCardByBtnCLose(event) {
     getTotalPrice();
 }
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
     addDishToOrdersPage();
     getTotalPrice();

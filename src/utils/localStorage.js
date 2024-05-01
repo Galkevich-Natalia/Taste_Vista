@@ -6,3 +6,7 @@ export function getOrdersDataToStorage() {
     const orders = localStorage.getItem('Orders');
     return JSON.parse(orders);
 }
+
+export function clearLocalStorage() {
+    localStorage.clear();
+}
