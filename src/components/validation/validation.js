@@ -8,7 +8,7 @@ function validateName() {
     const messageName = document.getElementById('messageName');
 
     if (!REGNAME.test(name)) {
-        messageName.textContent = 'Проверьте данные Name';
+        messageName.textContent = 'Please enter a valid name';
         messageName.style.color = "red";
         return false;
     } else {
@@ -22,7 +22,7 @@ function validatePhone() {
     const messagePhone = document.getElementById('messagePhone');
 
     if (!REGPHONE.test(phone)) {
-        messagePhone.textContent = 'Проверьте данные Phone';
+        messagePhone.textContent = 'Please enter a valid phone number';
         messagePhone.style.color = "red";
         return false;
     } else {
@@ -36,7 +36,7 @@ function validateEmail() {
     const messageEmail = document.getElementById('messageEmail');
 
     if (!REGEMAIL.test(email)) {
-        messageEmail.textContent = 'Проверьте данные Email';
+        messageEmail.textContent = 'Please enter a valid email address';
         messageEmail.style.color = "red";
         return false;
     } else {
@@ -50,7 +50,7 @@ function validateCity() {
     const messageCity = document.getElementById('messageCity');
 
     if (!REGCITY.test(city)) {
-        messageCity.textContent = 'Проверьте данные City';
+        messageCity.textContent = 'Please enter a valid city name';
         messageCity.style.color = "red";
         return false;
     } else {
@@ -64,7 +64,7 @@ function validateStreet() {
     const messageStreet = document.getElementById('messageStreet');
 
     if (!REGSTREET.test(street)) {
-        messageStreet.textContent = 'Проверьте данные Street';
+        messageStreet.textContent = 'Please enter a valid street name';
         messageStreet.style.color = "red";
         return false;
     } else {
@@ -78,7 +78,7 @@ function validateHouse() {
     const messageHouse = document.getElementById('messageHouse');
 
     if (!REGHOUSE.test(house)) {
-        messageHouse.textContent = 'Проверьте данные House';
+        messageHouse.textContent = 'Please enter a valid house number';
         messageHouse.style.color = "red";
         return false;
     } else {
@@ -92,7 +92,7 @@ function validateApartment() {
     const messageApartment = document.getElementById('messageApartment');
 
     if (!REGAPARTMENT.test(apartment)) {
-        messageApartment.textContent = 'Проверьте данные Apartment';
+        messageApartment.textContent = 'Please enter a valid apartment number';
         messageApartment.style.color = "red";
         return false;
     } else {
@@ -101,37 +101,9 @@ function validateApartment() {
     }
 }
 
-function validateForm() {
+export function validateForm() {
     const arrayCalls = [validateName(), validatePhone(), validateEmail(), validateCity(), validateStreet(), validateHouse(), validateApartment()];
     const isValidForm = arrayCalls.every((item) => item === true);
 
     return isValidForm;
-}
-
-export function checkValidation() {
-    if (validateForm()) {
-        const checkoutModal = document.querySelector('.checkout__modal');
-        const overlayCheckout = document.querySelector('.overlayCheckout');
-        const body = document.querySelector('body');
-
-        checkoutModal.style.display = 'block';
-        overlayCheckout.style.display = 'block';
-        body.classList.add('checkout__modal-open');
-    }
-}
-
-
-const checkoutModalBtnClose = document.querySelector('.checkout__modal-btn');
-checkoutModalBtnClose.addEventListener('click', closeCheckoutModal);
-
-function closeCheckoutModal() {
-    const checkoutModal = document.querySelector('.checkout__modal');
-    const overlayCheckout = document.querySelector('.overlayCheckout');
-    const body = document.querySelector('body');
-
-    checkoutModal.remove();
-    overlayCheckout.style.display = 'none';
-    body.classList.remove('checkout__modal-open');
-
-    window.location.href = "menu.html";
 }
