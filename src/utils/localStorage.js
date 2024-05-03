@@ -7,6 +7,6 @@ export function getOrdersDataFromStorage() {
     return JSON.parse(orders);
 }
 
-export function removeItemToStorage() {
-    localStorage.removeItem('Orders');
+export function removeItemToStorage(itemName) {
+    localStorage.removeItem(itemName);
 }

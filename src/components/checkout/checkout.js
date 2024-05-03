@@ -44,7 +44,7 @@ export function closeCheckoutModal() {
     body.classList.remove('checkout__modal-open');
 
     window.location.href = "menu.html";
-    removeItemToStorage();
+    removeItemToStorage('Orders');
 }
 
 document.addEventListener("DOMContentLoaded", () => {
