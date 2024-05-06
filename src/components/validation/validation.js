@@ -4,101 +4,104 @@ import {
 } from "../../constants/constants";
 
 function validateName() {
-    const name = document.getElementById('name').value;
+    const nameValue = document.getElementById('name').value;
     const messageName = document.getElementById('messageName');
 
-    if (!REGNAME.test(name)) {
-        messageName.textContent = 'Please enter a valid name';
-        messageName.style.color = "red";
+    if (!REGNAME.test(nameValue)) {
+        messageInvalidInput(messageName, 'name');
         return false;
-    } else {
-        messageName.textContent = '';
+    }
+    else {
+        messsageValidInput(messageName);
         return true;
     }
 }
 
 function validatePhone() {
-    const phone = document.getElementById('phone').value;
+    const phoneValue = document.getElementById('phone').value;
     const messagePhone = document.getElementById('messagePhone');
 
-    if (!REGPHONE.test(phone)) {
-        messagePhone.textContent = 'Please enter a valid phone number';
-        messagePhone.style.color = "red";
+    if (!REGPHONE.test(phoneValue)) {
+        messageInvalidInput(messagePhone, 'phone');
         return false;
     } else {
-        messagePhone.textContent = '';
+        messsageValidInput(messagePhone);
         return true;
     }
 }
 
 function validateEmail() {
-    const email = document.getElementById('email').value;
+    const emailValue = document.getElementById('email').value;
     const messageEmail = document.getElementById('messageEmail');
 
-    if (!REGEMAIL.test(email)) {
-        messageEmail.textContent = 'Please enter a valid email address';
-        messageEmail.style.color = "red";
+    if (!REGEMAIL.test(emailValue)) {
+        messageInvalidInput(messageEmail, 'email');
         return false;
     } else {
-        messageEmail.textContent = '';
+        messsageValidInput(messageEmail);
         return true;
     }
 }
 
 function validateCity() {
-    const city = document.getElementById('city').value;
+    const cityValue = document.getElementById('city').value;
     const messageCity = document.getElementById('messageCity');
 
-    if (!REGCITY.test(city)) {
-        messageCity.textContent = 'Please enter a valid city name';
-        messageCity.style.color = "red";
+    if (!REGCITY.test(cityValue)) {
+        messageInvalidInput(messageCity, 'city');
         return false;
     } else {
-        messageCity.textContent = '';
+        messsageValidInput(messageCity);
         return true;
     }
 }
 
 function validateStreet() {
-    const street = document.getElementById('street').value;
+    const streetValue = document.getElementById('street').value;
     const messageStreet = document.getElementById('messageStreet');
 
-    if (!REGSTREET.test(street)) {
-        messageStreet.textContent = 'Please enter a valid street name';
-        messageStreet.style.color = "red";
+    if (!REGSTREET.test(streetValue)) {
+        messageInvalidInput(messageStreet, 'street');
         return false;
     } else {
-        messageStreet.textContent = '';
+        messsageValidInput(messageStreet);
         return true;
     }
 }
 
 function validateHouse() {
-    const house = document.getElementById('house').value;
+    const houseValue = document.getElementById('house').value;
     const messageHouse = document.getElementById('messageHouse');
 
-    if (!REGHOUSE.test(house)) {
-        messageHouse.textContent = 'Please enter a valid house number';
-        messageHouse.style.color = "red";
+    if (!REGHOUSE.test(houseValue)) {
+        messageInvalidInput(messageHouse, 'house');
         return false;
     } else {
-        messageHouse.textContent = '';
+        messsageValidInput(messageHouse);
         return true;
     }
 }
 
 function validateApartment() {
-    const apartment = document.getElementById('apartment').value;
+    const apartmentValue = document.getElementById('apartment').value;
     const messageApartment = document.getElementById('messageApartment');
 
-    if (!REGAPARTMENT.test(apartment)) {
-        messageApartment.textContent = 'Please enter a valid apartment number';
-        messageApartment.style.color = "red";
+    if (!REGAPARTMENT.test(apartmentValue)) {
+        messageInvalidInput(messageApartment, 'apartment');
         return false;
     } else {
-        messageApartment.textContent = '';
+        messsageValidInput(messageApartment);
         return true;
     }
+}
+
+function messageInvalidInput(messageValue, inputValue) {
+    messageValue.textContent = 'Please enter a valid ' + inputValue;
+    messageValue.style.color = "red";
+}
+
+function messsageValidInput(messageCorrectValue) {
+    messageCorrectValue.textContent = '';
 }
 
 export function validateForm() {

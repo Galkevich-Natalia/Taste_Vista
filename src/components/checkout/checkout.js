@@ -23,7 +23,9 @@ function getCheckoutTotalPrice() {
 }
 
 function getOrder() {
-    if (validateForm()) {
+    const validateFormCall = validateForm();
+
+    if (validateFormCall) {
         const checkoutModal = document.querySelector('.checkout__modal');
         const overlayCheckout = document.querySelector('.overlayCheckout');
         const body = document.querySelector('body');
@@ -35,14 +37,6 @@ function getOrder() {
 }
 
 export function closeCheckoutModal() {
-    const checkoutModal = document.querySelector('.checkout__modal');
-    const overlayCheckout = document.querySelector('.overlayCheckout');
-    const body = document.querySelector('body');
-
-    checkoutModal.remove();
-    overlayCheckout.style.display = 'none';
-    body.classList.remove('checkout__modal-open');
-
     window.location.href = "menu.html";
     removeItemToStorage('Orders');
 }
