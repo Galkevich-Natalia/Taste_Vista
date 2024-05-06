@@ -1,15 +1,15 @@
-import { getOrdersDataToStorage, setOrdersDataToStorage } from "../../utils/localStorage";
+import { getOrdersDataFromStorage, setOrdersDataToStorage } from "../../utils/localStorage";
 import { addOrders } from "./createOrderElements";
 import { getFormatCurrency } from "../../utils/formatCurrency";
 
 function addDishToOrdersPage() {
-    const dataFromLocalStorage = getOrdersDataToStorage('Orders');
+    const dataFromLocalStorage = getOrdersDataFromStorage('Orders');
     dataFromLocalStorage.forEach((obj) => addOrders(obj));
 }
 
 function getTotalPrice() {
     const totalPriceValue = document.querySelector('.orders__footer-totalPrice-title-value');
-    const dataFromLocalStorage = getOrdersDataToStorage('Orders');
+    const dataFromLocalStorage = getOrdersDataFromStorage('Orders');
     const ordersMessage = document.querySelector('.orders__message');
     const ordersFooter = document.querySelector('.orders__footer');
 
@@ -26,7 +26,7 @@ function getTotalPrice() {
 
 export function incrementCounter(event) {
     if (event.target.classList.contains('order-card__btn-plus')) {
-        const dataFromLocalStorage = getOrdersDataToStorage('Orders');
+        const dataFromLocalStorage = getOrdersDataFromStorage('Orders');
         const orderCard = event.currentTarget;
         const orderCardId = +orderCard.id;
         const valueCount = orderCard.children[2].children[0].childNodes[1].children[0];
@@ -46,7 +46,7 @@ export function incrementCounter(event) {
 
 export function decrementCounter(event) {
     if (event.target.classList.contains('order-card__btn-minus')) {
-        const dataFromLocalStorage = getOrdersDataToStorage('Orders');
+        const dataFromLocalStorage = getOrdersDataFromStorage('Orders');
         const orderCard = event.currentTarget;
         const orderCardId = +orderCard.id;
         const valueCount = orderCard.children[2].children[0].children[1].children[0];
@@ -76,7 +76,7 @@ function getTotalPriceForOneDish(valueTotalPriceDish, item) {
 }
 
 function removeOrderCard(orderCard, orderCardId) {
-    const dataFromLocalStorage = getOrdersDataToStorage('Orders');
+    const dataFromLocalStorage = getOrdersDataFromStorage('Orders');
     orderCard.remove();
     const delElemFromLStorage = dataFromLocalStorage.filter(item => item.id !== orderCardId);
     setOrdersDataToStorage(delElemFromLStorage);
@@ -89,6 +89,8 @@ export function removeOrderCardByBtnCLose(event) {
     removeOrderCard(orderCard, orderCardId);
     getTotalPrice();
 }
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     addDishToOrdersPage();

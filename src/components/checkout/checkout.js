@@ -1,7 +1,8 @@
-import { getOrdersDataToStorage } from "../../utils/localStorage";
+import { getOrdersDataFromStorage } from "../../utils/localStorage";
 import { addItemToCheckoutList } from "./createCheckoutElements";
 import { getFormatCurrency } from "../../utils/formatCurrency";
 import { validateForm } from "../validation/validation";
+import { removeItemToStorage } from "../../utils/localStorage";
 
 const checkoutBtnOrder = document.querySelector('.checkout__block-btn');
 const checkoutModalBtnClose = document.querySelector('.checkout__modal-btn');
@@ -10,13 +11,13 @@ checkoutBtnOrder.addEventListener('click', getOrder);
 checkoutModalBtnClose.addEventListener('click', closeCheckoutModal);
 
 function getDishesOnCheckoutPage() {
-    const dataFromLocalStorage = getOrdersDataToStorage('Orders');
+    const dataFromLocalStorage = getOrdersDataFromStorage('Orders');
     dataFromLocalStorage.forEach((obj) => addItemToCheckoutList(obj));
 }
 
 function getCheckoutTotalPrice() {
     const totalPriceValue = document.querySelector('.checkout__block-totalPrice-value');
-    const dataFromLocalStorage = getOrdersDataToStorage("Orders");
+    const dataFromLocalStorage = getOrdersDataFromStorage("Orders");
     const checkoutTotalPrice = dataFromLocalStorage.reduce((acc, item) => acc + (item.price * item.count), 0);
     totalPriceValue.textContent = getFormatCurrency(checkoutTotalPrice);
 }
@@ -37,6 +38,7 @@ function getOrder() {
 
 export function closeCheckoutModal() {
     window.location.href = "menu.html";
+    removeItemToStorage('Orders');
 }
 
 document.addEventListener("DOMContentLoaded", () => {

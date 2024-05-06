@@ -1,7 +1,7 @@
 import { getMenu } from "../../api/getApi";
 import { addMenu } from "./createCards";
 import { getCardDatabById } from "../../api/getApi";
-import { setOrdersDataToStorage, getOrdersDataToStorage } from "../../utils/localStorage";
+import { setOrdersDataToStorage, getOrdersDataFromStorage } from "../../utils/localStorage";
 
 export async function getCardsData(value) {
   try {
@@ -49,13 +49,13 @@ export function addDish(event) {
     try {
       getCardDatabById(cardId)
         .then(dataOrder => {
-          const dataCard = getOrdersDataToStorage('Orders');
+          const dataCard = getOrdersDataFromStorage('Orders');
 
           if (dataCard === null) {
             dataOrder.count = 1;
             setOrdersDataToStorage([dataOrder]);
           } else {
-            const dataFromLocalStorage = getOrdersDataToStorage("Orders");
+            const dataFromLocalStorage = getOrdersDataFromStorage("Orders");
             const isObject = dataFromLocalStorage.find(item => item.id === dataOrder.id)
 
             if (isObject === undefined) {
