@@ -8,12 +8,10 @@ function validateName() {
     const messageName = document.getElementById('messageName');
 
     if (!REGNAME.test(nameValue)) {
-        messageInvalidInput(messageName, 'name');
-        return false;
+        return messageInvalidInput(messageName, 'name');
     }
     else {
-        messsageValidInput(messageName);
-        return true;
+        return messsageValidInput(messageName);
     }
 }
 
@@ -22,11 +20,9 @@ function validatePhone() {
     const messagePhone = document.getElementById('messagePhone');
 
     if (!REGPHONE.test(phoneValue)) {
-        messageInvalidInput(messagePhone, 'phone');
-        return false;
+        return messageInvalidInput(messagePhone, 'phone');
     } else {
-        messsageValidInput(messagePhone);
-        return true;
+        return messsageValidInput(messagePhone);
     }
 }
 
@@ -35,11 +31,9 @@ function validateEmail() {
     const messageEmail = document.getElementById('messageEmail');
 
     if (!REGEMAIL.test(emailValue)) {
-        messageInvalidInput(messageEmail, 'email');
-        return false;
+        return messageInvalidInput(messageEmail, 'email');
     } else {
-        messsageValidInput(messageEmail);
-        return true;
+        return messsageValidInput(messageEmail);
     }
 }
 
@@ -48,11 +42,9 @@ function validateCity() {
     const messageCity = document.getElementById('messageCity');
 
     if (!REGCITY.test(cityValue)) {
-        messageInvalidInput(messageCity, 'city');
-        return false;
+        return messageInvalidInput(messageCity, 'city');
     } else {
-        messsageValidInput(messageCity);
-        return true;
+        return messsageValidInput(messageCity);
     }
 }
 
@@ -61,11 +53,9 @@ function validateStreet() {
     const messageStreet = document.getElementById('messageStreet');
 
     if (!REGSTREET.test(streetValue)) {
-        messageInvalidInput(messageStreet, 'street');
-        return false;
+        return messageInvalidInput(messageStreet, 'street');
     } else {
-        messsageValidInput(messageStreet);
-        return true;
+        return messsageValidInput(messageStreet);
     }
 }
 
@@ -74,11 +64,9 @@ function validateHouse() {
     const messageHouse = document.getElementById('messageHouse');
 
     if (!REGHOUSE.test(houseValue)) {
-        messageInvalidInput(messageHouse, 'house');
-        return false;
+        return messageInvalidInput(messageHouse, 'house');
     } else {
-        messsageValidInput(messageHouse);
-        return true;
+        return messsageValidInput(messageHouse);
     }
 }
 
@@ -87,21 +75,22 @@ function validateApartment() {
     const messageApartment = document.getElementById('messageApartment');
 
     if (!REGAPARTMENT.test(apartmentValue)) {
-        messageInvalidInput(messageApartment, 'apartment');
-        return false;
+        return messageInvalidInput(messageApartment, 'apartment');
+
     } else {
-        messsageValidInput(messageApartment);
-        return true;
+        return messsageValidInput(messageApartment);
     }
 }
 
 function messageInvalidInput(messageValue, inputValue) {
     messageValue.textContent = 'Please enter a valid ' + inputValue;
     messageValue.style.color = "red";
+    return false;
 }
 
 function messsageValidInput(messageCorrectValue) {
     messageCorrectValue.textContent = '';
+    return true;
 }
 
 export function validateForm() {
