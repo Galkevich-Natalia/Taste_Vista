@@ -49,9 +49,14 @@
                             <div class="checkout__block-form-wrap">
                                 <form class="checkout__form checkout__form-contacts">
                                     <label class="checkout__label">Name</label>
-                                    <input class="checkout__input" type="text">
+                                    <input class="checkout__input" type="text" id="name">
+                                    <span id="messageName"></span>
                                     <label class="checkout__label">Phone</label>
-                                    <input class="checkout__input" type="phone">
+                                    <input class="checkout__input" type="text" id="phone">
+                                    <span id="messagePhone"></span>
+                                    <label class="checkout__label">Email</label>
+                                    <input class="checkout__input" type="email" id="email">
+                                    <span id="messageEmail"></span>
                                 </form>
                             </div>
                             <div class="checkout__block-title">
@@ -60,13 +65,17 @@
                             <div class="checkout__block-form-wrap">
                                 <form class="checkout__form checkout__form-adress">
                                     <label class="checkout__label">City</label>
-                                    <input class="checkout__input" type="text">
+                                    <input class="checkout__input" type="text" id="city">
+                                    <span id="messageCity"></span>
                                     <label class="checkout__label">Street</label>
-                                    <input class="checkout__input" type="text">
+                                    <input class="checkout__input" type="text" id="street">
+                                    <span id="messageStreet"></span>
                                     <label class="checkout__label">House</label>
-                                    <input class="checkout__input" type="number">
+                                    <input class="checkout__input" type="text" id="house">
+                                    <span id="messageHouse"></span>
                                     <label class="checkout__label">Apartment</label>
-                                    <input class="checkout__input" type="number">
+                                    <input class="checkout__input" type="text" id="apartment">
+                                    <span id="messageApartment"></span>
                                 </form>
                             </div>
                         </div>
@@ -93,9 +102,22 @@
                                 </div>
                             </div>
                             <div class="checkout__block-btn-container">
-                                <button>Order</button>
+                                <button class="checkout__block-btn">Order</button>
                             </div>
                         </div>    
+                    </div>
+                </div>
+                <div class="overlayCheckout"></div>
+                <div class="checkout__modal">
+                    <div class="checkout__modal-container">
+                        <div class="checkout__modal-wrapper">
+                            <div class="checkout__modal-btn-cont">
+                                <button class="checkout__modal-btn"></button>
+                            </div>
+                            <div class="checkout__modal-text-cont">
+                                <span>Your order has been accepted!</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
