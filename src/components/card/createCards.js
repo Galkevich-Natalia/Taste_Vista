@@ -132,6 +132,8 @@ function crtCardIngredients(value) {
         const cardIngredientsText = document.createElement('span');
         cardIngredientsText.textContent = value.ingredients.join(', ') +  ".";
         cardIngredients.append(cardIngredientsText);
+    } else {
+        cardIngredients.style.display = 'none';
     }
 
     return cardIngredients;

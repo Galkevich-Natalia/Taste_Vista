@@ -72,11 +72,16 @@
 
         &_modal {
             background-color: dimgrey;
-            width: 950px;
-            // width: 60rem;
+            width: 60rem;
             padding: 0;
             display: flex;
         }
+    }
+
+    &__content_modal {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     &__containerCross {

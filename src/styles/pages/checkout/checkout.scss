@@ -119,7 +119,6 @@
 
     &-container {
         width: 400px;
-        // background-color: dimgrey;
         background-color: white; 
     }
 
@@ -143,7 +142,6 @@
         &::before {
             content: "";
             position: absolute;
-            // background-color: white;
             background-color: black;
             width: 3px;
             height: 20px;
@@ -164,22 +162,19 @@
     }
 
     &-text-cont {
-        //padding-top: 30px;
+        padding: 20px 0;
         text-align: center;
 
-        .span_1 {
-            padding-top: 20px;
-
+        .title {
             span {
-                // color: white;
                 color: black;
                 font-size: 18px;
                 font-weight: 900;
             }
         }
 
-        .span_2 {
-            padding-top: 20px;
+        .subtitle {
+            padding: 20px 0;
 
             span {
                 color: black;
@@ -188,9 +183,7 @@
             }
         }
 
-        .span_3 {
-            padding: 20px 0;
-
+        .text {
             span {
                 color: black;
                 font-size: 16px;
