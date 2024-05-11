@@ -64,10 +64,13 @@ function crtCardContent(data, type) {
 
     if(type === "ordinary") {
         cardContent.classList.add("card__content");
-        cardContent.append(crtCardName(data, type), crtCardSize(data), crtCardIngredients(data), crtCardFooter(data));
+        cardContent.append(crtCardName(data, type));
+        data.ingredients !== null && cardContent.append(crtCardIngredients(data));
+        cardContent.append(crtCardFooter(data));
+       
     } else if (type === "modal"){
         cardContent.classList.add("card__content_modal")
-        cardContent.append(crtContainerBtnClose(), crtCardName(data, type), crtCardSize(data));
+        cardContent.append(crtContainerBtnClose(), crtCardName(data, type));
         data.description !== null && cardContent.append(crtCardDescription(data));
         cardContent.append(crtCardFooter(data));
     }
@@ -103,17 +106,10 @@ function crtTextName(value, type) {
     const textName = document.createElement('span');
     const chooseClass = type === "ordinary" ? "card__text" : "card__text_modal";
     textName.classList.add(chooseClass);
-    textName.textContent = value.name;
+    textName.textContent = value.name + ' ' + '-' + ' ';
+    textName.append(crtTextSize(value));
 
     return textName;
-}
-
-function crtCardSize(data) {
-    const container = document.createElement('div');
-    container.classList.add('card__size');
-    container.append(crtTextSize(data));
-
-    return container;
 }
 
 function crtTextSize(value) {
