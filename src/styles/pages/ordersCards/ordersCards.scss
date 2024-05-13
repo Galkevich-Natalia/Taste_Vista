@@ -1,0 +1,87 @@
+.orders__cards {
+    .order {
+        &-card {
+            padding: 20px 0;
+            display: grid;
+            grid-template-columns: 25% 50% 15% 10%;
+            
+            &__image {
+                width: 200px;
+                padding-right: 20px; 
+            }
+            
+            &__name {
+                max-width: 450px;
+                text-align: center;
+                margin: auto 0;
+                font-size: 20px;
+            }
+    
+            &__info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            &__counter {
+                padding-bottom: 15px;
+                display: flex;
+            }
+    
+            &__container-minus,
+            &__container-plus {
+                .order-card__btn-minus,
+                .order-card__btn-plus {
+                    color: white;
+                    font-size: 20px;
+                }
+            }
+    
+            &__count {
+                padding: 0 15px;
+                font-size: 20px;
+            }
+    
+            &__price {
+                font-size: 20px;
+            }
+
+            &__btnClose-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            &__btnClose {
+                width: 25px;
+                height: 2px;
+                cursor: pointer;
+                position: relative;
+                bottom: 10px;
+            
+                &::after, 
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-color: #fff;
+                    width: 3px;
+                    height: 20px;
+                    -webkit-transition: all 0.5s ease-in-out;
+                    -moz-transition: all 0.5s ease-in-out;
+                    -o-transition: all 0.5s ease-in-out;
+                    -ms-transition: all 0.5s ease-in-out;
+                    transition: all 0.5s ease-in-out;
+                }
+                
+                &::before {
+                    transform: rotate(45deg);
+                }
+                
+                &::after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
