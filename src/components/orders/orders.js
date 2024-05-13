@@ -8,7 +8,7 @@ function addDishToOrdersPage() {
 }
 
 function getTotalPrice() {
-    const totalPriceValue = document.querySelector('.orders__footer-totalPrice-title-value');
+    const totalPriceValue = document.querySelector('.orders__footer-totalPrice-value');
     const dataFromLocalStorage = getOrdersDataFromStorage('Orders');
     const ordersMessage = document.querySelector('.orders__message');
     const ordersFooter = document.querySelector('.orders__footer');
@@ -90,7 +90,7 @@ export function removeOrderCardByBtnCLose(event) {
     getTotalPrice();
 }
 
-function addMinHeightForOrders(){
+function addMinHeightForOrders() {
     const orders = document.querySelector('.orders');
     let heightDisplay = window.innerHeight - 180;
 
