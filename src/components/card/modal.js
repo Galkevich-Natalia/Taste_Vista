@@ -15,7 +15,6 @@ export function addModal(event) {
           overlay.addEventListener('click', closeModal);
           body.classList.add('modal-open');
         });
-
     } catch (error) {
       throw error;
     }

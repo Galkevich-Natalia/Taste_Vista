@@ -20,7 +20,6 @@ function crtCard(data, type) {
     }
 
     card.addEventListener('click', addDish);
-
     return card;
 }
 
@@ -67,7 +66,6 @@ function crtCardContent(data, type) {
         cardContent.append(crtCardName(data, type));
         data.ingredients !== null && cardContent.append(crtCardIngredients(data));
         cardContent.append(crtCardFooter(data));
-
     } else if (type === "modal") {
         cardContent.classList.add("card__content_modal")
         cardContent.append(crtContainerBtnClose(), crtCardName(data, type));

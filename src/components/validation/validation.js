@@ -9,8 +9,7 @@ function validateName() {
 
     if (!REGNAME.test(nameValue)) {
         return messageInvalidInput(messageName, 'name');
-    }
-    else {
+    } else {
         return messsageValidInput(messageName);
     }
 }
@@ -76,7 +75,6 @@ function validateApartment() {
 
     if (!REGAPARTMENT.test(apartmentValue)) {
         return messageInvalidInput(messageApartment, 'apartment');
-
     } else {
         return messsageValidInput(messageApartment);
     }

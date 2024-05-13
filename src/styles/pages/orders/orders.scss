@@ -21,7 +21,6 @@
                 display: grid;
                 grid-template-columns: 25% 50% 15% 10%;
                 
-        
                 &__image {
                     width: 200px;
                     padding-right: 20px; 
@@ -48,7 +47,6 @@
         
                 &__container-minus,
                 &__container-plus {
-        
                     .order-card__btn-minus,
                     .order-card__btn-plus {
                         color: white;
