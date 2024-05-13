@@ -1,22 +1,22 @@
 import { getCardDatabById } from "../../api/getApi";
-import { addMenu } from "../card/createCards";
+import { addMenu } from "./createCards";
 
 export function addModal(event) {
-  if(!event.target.classList.contains('card__btn')) {
+  if (!event.target.classList.contains('card__btn')) {
     const cardId = +event.currentTarget.id;
     const overlay = document.querySelector('.overlay');
     const body = document.querySelector('body');
 
     try {
       getCardDatabById(cardId)
-      .then(cardData => { 
+        .then(cardData => {
           addMenu(cardData, 'modal');
           overlay.style.display = 'block';
           overlay.addEventListener('click', closeModal);
           body.classList.add('modal-open');
-      });
-      
-    } catch(error) {
+        });
+
+    } catch (error) {
       throw error;
     }
   }

@@ -1,5 +1,5 @@
 import { getFormatCurrency } from "../../utils/formatCurrency";
-import { addModal, closeModal } from "../modal/modal";
+import { addModal, closeModal } from "./modal";
 import { addDish } from "./card";
 
 const cardsContainer = document.querySelector('.cards__container');
@@ -15,9 +15,9 @@ function crtCard(data, type) {
     card.id = data.id;
     card.append(crtCardContainer(data, type));
 
-    if(type === "ordinary") {
+    if (type === "ordinary") {
         card.addEventListener('click', addModal);
-    } 
+    }
 
     card.addEventListener('click', addDish);
 
@@ -55,20 +55,20 @@ function crtCardImg(value) {
     cardImg.classList.add('img');
     cardImg.src = value.image;
     cardImg.alt = value.name;
-    
+
     return cardImg;
 }
 
 function crtCardContent(data, type) {
     const cardContent = document.createElement('div');
 
-    if(type === "ordinary") {
+    if (type === "ordinary") {
         cardContent.classList.add("card__content");
         cardContent.append(crtCardName(data, type));
         data.ingredients !== null && cardContent.append(crtCardIngredients(data));
         cardContent.append(crtCardFooter(data));
-       
-    } else if (type === "modal"){
+
+    } else if (type === "modal") {
         cardContent.classList.add("card__content_modal")
         cardContent.append(crtContainerBtnClose(), crtCardName(data, type));
         data.description !== null && cardContent.append(crtCardDescription(data));
@@ -123,14 +123,9 @@ function crtTextSize(value) {
 function crtCardIngredients(value) {
     const cardIngredients = document.createElement('div');
     cardIngredients.classList.add('card__ingredients');
-    
-    if(value.ingredients && value.ingredients.length > 0) {
-        const cardIngredientsText = document.createElement('span');
-        cardIngredientsText.textContent = value.ingredients.join(', ') +  ".";
-        cardIngredients.append(cardIngredientsText);
-    } else {
-        cardIngredients.style.display = 'none';
-    }
+    const cardIngredientsText = document.createElement('span');
+    cardIngredientsText.textContent = value.ingredients.join(', ') + ".";
+    cardIngredients.append(cardIngredientsText);
 
     return cardIngredients;
 }
@@ -166,8 +161,8 @@ function crtCardCost(value) {
     const cardCost = document.createElement('p');
     cardCost.classList.add('card__cost-price');
     cardCost.textContent = getFormatCurrency(value.price);
-   
-   return cardCost;
+
+    return cardCost;
 }
 
 function crtCardConteinerBtn() {
