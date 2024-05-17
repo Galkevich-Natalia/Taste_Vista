@@ -1,29 +1,65 @@
 .socialMedia {
     &__wrapper {
-        padding: 70px 20px;
+        padding: 30px 0 80px 0;
         text-align: center;
         min-height: 80vh;
+
+        @media screen and (max-width: 768px) {
+            padding: 0 0 70px 0;
+        }
     }
 
     &__heading{
         padding: 70px 0 50px 0;
 
+        @media screen and (max-width: 768px) {
+            padding: 30px 0 50px 0;
+        }
+
         h2 {
             font-size: 55px;
             font-family: "Dancing Script", cursive;
+
+            @media screen and (max-width: 768px) {
+                font-size: 45px;
+            }
+
+            @media screen and (max-width: 570px) {
+                font-size: 34px;
+            }
         }
     }
 
     &__text {
-        line-height: 50px;
+        line-height: 40px;
+
+        @media screen and (max-width: 570px) {
+            line-height: 25px;
+        }
+
+        @media screen and (max-width: 570px) {
+            line-height: 25px;
+        }
 
         p {
             font-size: 22px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 20px;
+            }
+
+            @media screen and (max-width: 570px) {
+                font-size: 17px;
+            }
         }
     }
 
     &__menu {
         margin: 100px 0 20px 0;
+
+        @media screen and (max-width: 768px) {
+            margin: 50px 0 20px 0;
+        }
     }
 
     &__list {
