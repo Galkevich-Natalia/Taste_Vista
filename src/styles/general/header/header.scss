@@ -1,15 +1,5 @@
 .header {
 
-    &__logo {
-        padding: 9px 0;
-    }
-
-    .logo {
-        font-size: 35px;
-        font-family: "Dancing Script", cursive;
-        border-bottom: 1px solid #fff;
-    } 
-
     &__wrapper {
         width: 100%;
         display: flex;
@@ -21,10 +11,25 @@
         z-index: 5;
     }
 
+    &__logo {
+        padding: 9px 0;
+
+        .logo {
+            font-size: 35px;
+            color: white;
+            font-family: "Dancing Script", cursive;
+            border-bottom: 1px solid #fff;
+        } 
+    }
+
     &__menu {
         display: flex;
         justify-content: space-between;
         margin: 20px 0;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
 
         li {
             padding: 0 30px;
@@ -42,38 +47,140 @@
         }
     }
 
-    .cart {
-        background-color: black;
-        border: 1px solid white;
-        border-radius: 10px;
-        transition: all 0.5s ease;
+    &__btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
 
-        &:hover {
-            background-color: rgb(105, 105, 105);
+        .burger-menu {
+            display: none;
+    
+            @media screen and (max-width: 768px) {
+                display: flex;
+            }
+
+            &__button {
+                padding-right: 20px;
+            }
+    
+            &__image {
+                @media screen and (max-width: 768px) {
+                    width: 35px;
+                }
+            }
         }
-
-        &__button {
-            padding: 5px 10px;
-            display: flex;
-            align-items: center;
+    
+        .cart {
+            background-color: black;
+            border: 1px solid white;
+            border-radius: 10px;
             transition: all 0.5s ease;
+    
+            @media screen and (max-width: 768px) {
+                background-color: none;
+                border: none;
+                border-radius: none;
+            }
+    
+            &:hover {
+                background-color: rgb(105, 105, 105);
+            }
+    
+            &__button {
+                padding: 5px 10px;
+                display: flex;
+                align-items: center;
+                transition: all 0.5s ease;
+            }
+    
+            &__image {
+                width: 30px;
+                margin-right: 10px;
+    
+                @media screen and (max-width: 768px) {
+                    width: 35px;
+                    margin-right: 0;
+                }
+    
+                img {
+                    max-width: 100%;
+                    display: block;
+                }
+            }
+    
+            &__title {
+                @media screen and (max-width: 768px) {
+                    display: none;
+                }
+    
+                span {
+                    color: #fff;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .side-bar {
+        display: none;
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 40;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding: 60px 20px 0 40px;
+
+        @media screen and (max-width: 350px) {
+            width: 100%;
         }
 
-        &__image {
-            width: 30px;
-            margin-right: 10px;
+        &__menu {
+            li {
+                padding-bottom: 15px;
 
-            img {
-                max-width: 100%;
-                display: block;
+                a {
+                    color: white;
+                }
             }
         }
 
-        &__title {
+        &__cross {
+            display: flex;
+            justify-content: end;
+            padding-bottom: 15px;
 
-            span {
-                color: #fff;
-                font-size: 18px;
+            .cross {
+                width: 25px;
+                height: 2px;
+                cursor: pointer;
+                position: relative;
+                bottom: 10px;
+            
+                &::after, 
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-color: white;
+                    width: 1.5px;
+                    height: 18px;
+                    -webkit-transition: all 0.5s ease-in-out;
+                    -moz-transition: all 0.5s ease-in-out;
+                    -o-transition: all 0.5s ease-in-out;
+                    -ms-transition: all 0.5s ease-in-out;
+                    transition: all 0.5s ease-in-out;
+                }
+                
+                &::before {
+                    transform: rotate(45deg);
+                }
+                
+                &::after {
+                    transform: rotate(-45deg);
+                }
             }
         }
     }
