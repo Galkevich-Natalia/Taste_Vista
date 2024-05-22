@@ -31,17 +31,38 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="cart">
-                    <div class="cart__container">
-                        <a class="cart__button" href="./orders.html">
-                            <div class="cart__image">
-                                <img src="../assets/icons/basket.png" alt="basket">
-                            </div>
-                            <div class="cart__title">
-                                <span>Order</span>
-                            </div>
-                        </a>
+                <div class="header__btns">
+                    <div class="burger-menu">
+                        <div class="burger-menu__container">
+                            <button class="burger-menu__button">
+                                <div class="burger-menu__image">
+                                    <img src="/src/assets/icons/burger-menu.png" alt="burger-menu">
+                                </div>
+                            </button>
+                        </div>   
                     </div>
+                </div>
+                <div class="overlaySideBar"></div>
+                <div class="side-bar">
+                    <div class="side-bar__cross">
+                        <button class="cross"></button>
+                    </div>
+                    <nav class="side-bar__nav">
+                        <ul class="side-bar__menu">
+                            <li>
+                                <a href="/index.html">Main</a>
+                            </li>
+                            <li>
+                                <a href="./menu.html">Menu</a>
+                            </li>
+                            <li>
+                                <a href="./delivery.html">Delivery</a>
+                            </li>
+                            <li>
+                                <a href="./contacts.html">Contacts</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -105,6 +126,7 @@
         </div>
     </footer>
 
+    <script src="/src/components/navigation-menu/navigation-menu.js"></script>
     <script src="/src/components/orders/orders.js"></script>
 
 </body>
