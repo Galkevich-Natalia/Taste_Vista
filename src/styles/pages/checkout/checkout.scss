@@ -205,12 +205,12 @@
     }
 
     &-wrapper {
-        padding: 40px 30px;
+        padding: 40px 30px 40px 55px;
         display: flex;
         justify-content: space-around;
 
         @media screen and (max-width: 680px) {
-            padding: 30px 20px;
+            padding: 30px 20px 30px 45px;
         }
     }
 
@@ -231,18 +231,13 @@
             content: "";
             position: absolute;
             background-color: black;
-            width: 3px;
-            height: 20px;
+            width: 1.5px;
+            height: 15px;
             -webkit-transition: all 0.5s ease-in-out;
             -moz-transition: all 0.5s ease-in-out;
             -o-transition: all 0.5s ease-in-out;
             -ms-transition: all 0.5s ease-in-out;
             transition: all 0.5s ease-in-out;
-
-            @media screen and (max-width: 680px) {
-                width: 2px;
-                height: 18px;
-            }
         }
         
         &::before {

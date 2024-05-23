@@ -4,7 +4,8 @@ import { getFormatCurrency } from "../../utils/formatCurrency";
 
 function addDishToOrdersPage() {
     const dataFromLocalStorage = getOrdersDataFromStorage('Orders');
-    dataFromLocalStorage.forEach((obj) => addOrders(obj));
+    
+    dataFromLocalStorage && dataFromLocalStorage.forEach((obj) => addOrders(obj));
 }
 
 function getTotalPrice() {
@@ -92,7 +93,7 @@ export function removeOrderCardByBtnCLose(event) {
 
 function addMinHeightForOrders() {
     const orders = document.querySelector('.orders');
-    let heightDisplay = window.innerHeight - 180;
+    let heightDisplay = window.innerHeight - 60 - 180;
 
     orders.style.minHeight = heightDisplay + 'px';
 }

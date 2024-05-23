@@ -27,63 +27,61 @@
             background-image: url(https://kartinki.pics/uploads/posts/2021-04/1617313820_4-p-foni-dlya-menyu-5.jpg) !important;
         }
     }
-    
-    .major {
-        &__wrapper {
-            padding: 235px 0;
+
+    &__wrapper {
+        padding: 235px 0;
+
+        @media screen and (max-width: 768px) {
+            padding: 120px 0;
+        }
+    }
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__greeting {
+        h3 {
+            font-size: 50px;
 
             @media screen and (max-width: 768px) {
-                padding: 120px 0;
+                font-size: 40px;
             }
-        }
 
-        &__greeting {
-            h3 {
-                font-size: 50px;
-
-                @media screen and (max-width: 768px) {
-                    font-size: 40px;
-                }
-
-                @media screen and (max-width: 420px) {
-                    font-size: 30px;
-                }
-            }
-        }
-
-        &__title {
-            padding: 30px 0;
-
-            h1 {
-                font-size: 100px;
-                font-family: 'Dancing Script', cursive;
-
-                @media screen and (max-width: 768px) {
-                    font-size: 80px;
-                }
-
-                @media screen and (max-width: 420px) {
-                    font-size: 60px;
-                }
-            }
-        }
-
-        &__subTitle {
-            h2 {
+            @media screen and (max-width: 420px) {
                 font-size: 30px;
-
-                @media screen and (max-width: 768px) {
-                    font-size: 25px;
-                }
-
-                @media screen and (max-width: 768px) {
-                    font-size: 20px;
-                }
             }
-        } 
-    
-        .major_heading {
-            text-align: center;
+        }
+    }
+
+    &__title {
+        padding: 30px 0;
+
+        h1 {
+            font-size: 100px;
+            font-family: 'Dancing Script', cursive;
+
+            @media screen and (max-width: 768px) {
+                font-size: 80px;
+            }
+
+            @media screen and (max-width: 420px) {
+                font-size: 60px;
+            }
+        }
+    }
+
+    &__subTitle {
+        h2 {
+            font-size: 30px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 25px;
+            }
+
+            @media screen and (max-width: 768px) {
+                font-size: 20px;
+            }
         }
     }
 }
