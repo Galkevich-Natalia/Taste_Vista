@@ -1,27 +1,22 @@
 .checkout {
     &__wrapper {
-        padding: 50px 0;
+        padding: 80px 0;
         display: flex;
         gap: 20px;
 
         @media screen and (max-width: 768px) {
-            padding: 0 0 50px 0;
+            padding: 80px 0 50px 0;
         }
 
         @media screen and (max-width: 680px) {
             display: block;
-            width: 65%;
+            max-width: 480px;
             margin: 0 auto;
-        }
-
-        @media screen and (max-width: 450px) {
-            width: unset;
-            
         }
     }
 
     &__title {
-        padding-bottom: 20px;
+        padding: 20px 0;
         
         h3 {
             font-size: 30px;
@@ -53,11 +48,15 @@
         input {
             border-radius: 10px;
             padding: 5px 8px;
+
+            @media screen and (max-width: 680px) {
+                padding: 2px 8px;
+            }
         }
     }
 
     &__label {
-        padding: 18px 0 7px 0;
+        padding: 10px 0 5px 0;
         font-size: 15px;
 
         @media screen and (max-width: 680px) {
@@ -74,7 +73,7 @@
     #messageHouse,
     #messageApartment {
         color: red;
-        font-size: 14px;
+        font-size: 13px;
         padding-top: 5px;
     }
 
@@ -82,11 +81,15 @@
         width: 100%;
         padding-bottom: 50px;
 
+        @media screen and (max-width: 680px) {
+            padding-bottom: 20px;
+        }
+
         &-title {
             padding: 40px 0 20px 0;
 
             @media screen and (max-width: 680px) {
-                padding: 20px 0 0 0;
+                padding: 15px 0 10px 0;
             }
     
             h4 {
@@ -185,126 +188,4 @@
             }
         }
     }
-}
-
-.checkout__modal {
-    display: none;
-    overflow: hidden;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 25;
-
-    @media screen and (max-width: 680px) {
-        width: 80%;
-    }
-
-    &-container {
-        background-color: white; 
-    }
-
-    &-wrapper {
-        padding: 40px 30px 40px 55px;
-        display: flex;
-        justify-content: space-around;
-
-        @media screen and (max-width: 680px) {
-            padding: 30px 20px 30px 45px;
-        }
-    }
-
-    &-btn-cont {
-        display: flex;
-        justify-content: end;
-    }
-
-    &-btn {
-        width: 25px;
-        height: 2px;
-        cursor: pointer;
-        position: relative;
-        bottom: 10px;
-    
-        &::after, 
-        &::before {
-            content: "";
-            position: absolute;
-            background-color: black;
-            width: 1.5px;
-            height: 15px;
-            -webkit-transition: all 0.5s ease-in-out;
-            -moz-transition: all 0.5s ease-in-out;
-            -o-transition: all 0.5s ease-in-out;
-            -ms-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
-        }
-        
-        &::before {
-            transform: rotate(45deg);
-        }
-        
-        &::after {
-            transform: rotate(-45deg);
-        }
-    }
-
-    &-text-cont {
-        padding: 20px 0;
-        text-align: center;
-
-        .title {
-            span {
-                color: black;
-                font-size: 18px;
-                font-weight: 900;
-
-                @media screen and (max-width: 680px) {
-                    font-size: 16px;
-                }
-            }
-        }
-
-        .subtitle {
-            padding: 20px 0;
-
-            span {
-                color: black;
-                font-size: 16px;
-                font-weight: 500;
-
-                @media screen and (max-width: 680px) {
-                    font-size: 14px;
-                }
-            }
-        }
-
-        .text {
-            span {
-                color: black;
-                font-size: 16px;
-                font-weight: 500;
-
-                @media screen and (max-width: 680px) {
-                    font-size: 14px;
-                }
-            }
-        }
-    }
-}
-
-.overlayCheckout {
-    display: none;
-    position: fixed;
-    z-index: 20;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
-
-.checkout__modal-open {
-    overflow: hidden;
 }

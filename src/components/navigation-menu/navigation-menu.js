@@ -8,7 +8,6 @@ burgerMenu.addEventListener('click', openSideBar);
 sideBarCross.addEventListener('click', closeSideBar);
 
 function openSideBar() {
-    burgerMenu.style.display = 'none';
     sideBar.style.display = 'block';
     overlaySideBar.style.display = 'block';
     overlaySideBar.addEventListener('click', closeSideBar);
@@ -17,7 +16,6 @@ function openSideBar() {
 
 function closeSideBar() {
     sideBar.style.display = 'none';
-    burgerMenu.style.display = 'block';
     overlaySideBar.style.display = 'none';
     body.classList.remove('hideScroll');
 }

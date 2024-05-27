@@ -86,7 +86,7 @@ function crtContainerBtnClose() {
 
 function crtBtnClose() {
     const btnClose = document.createElement('button');
-    btnClose.classList.add('card__cross');
+    btnClose.classList.add('cross', 'cross_menu-card');
     btnClose.addEventListener('click', closeModal);
 
     return btnClose;

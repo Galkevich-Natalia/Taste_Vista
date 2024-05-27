@@ -1,5 +1,4 @@
 .header {
-
     &__wrapper {
         width: 100%;
         padding: 0 20px;
@@ -10,6 +9,10 @@
         position: fixed;
         left: 0;
         z-index: 5;
+
+        @media screen and (max-width: 570px) {
+            justify-content: space-between;
+        }
     }
 
     &__logo {
@@ -20,6 +23,10 @@
             color: white;
             font-family: "Dancing Script", cursive;
             border-bottom: 1px solid #fff;
+
+            @media screen and (max-width: 570px) {
+                font-size: 30px;
+            }
         } 
     }
 
@@ -62,6 +69,10 @@
                 }
             }
         }
+
+        li:last-child {
+            padding-right: 0;
+        }
     }
 
     &__btns {
@@ -78,6 +89,10 @@
 
             &__button {
                 padding-right: 20px;
+
+                @media screen and (max-width: 570px) {
+                    padding-right: 10px;
+                }
             }
     
             &__image {
@@ -169,36 +184,6 @@
             display: flex;
             justify-content: end;
             padding-bottom: 15px;
-
-            .cross {
-                width: 25px;
-                height: 2px;
-                cursor: pointer;
-                position: relative;
-                bottom: 10px;
-            
-                &::after, 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    background-color: white;
-                    width: 1.5px;
-                    height: 18px;
-                    -webkit-transition: all 0.5s ease-in-out;
-                    -moz-transition: all 0.5s ease-in-out;
-                    -o-transition: all 0.5s ease-in-out;
-                    -ms-transition: all 0.5s ease-in-out;
-                    transition: all 0.5s ease-in-out;
-                }
-                
-                &::before {
-                    transform: rotate(45deg);
-                }
-                
-                &::after {
-                    transform: rotate(-45deg);
-                }
-            }
         }
     }
 }

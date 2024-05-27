@@ -27,12 +27,13 @@ function getOrder() {
 
     if (validateFormCall) {
         const checkoutModal = document.querySelector('.checkout__modal');
-        const overlayCheckout = document.querySelector('.overlayCheckout');
+        const overlay = document.querySelector('.overlay');
         const body = document.querySelector('body');
 
         checkoutModal.style.display = 'block';
-        overlayCheckout.style.display = 'block';
-        body.classList.add('checkout__modal-open');
+        overlay.style.display = 'block';
+        overlay.addEventListener('click', closeCheckoutModal);
+        body.classList.add('hideScroll');
     }
 }
 

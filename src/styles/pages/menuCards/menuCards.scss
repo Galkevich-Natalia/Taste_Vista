@@ -4,22 +4,27 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 40px;
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 1160px) {
             grid-template-columns: repeat(3, 1fr);
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 867px) {
             grid-template-columns: repeat(2, 1fr);
             gap: 40px 80px;
         }
 
-        @media screen and (max-width: 570px) {
+        @media screen and (max-width: 680px) {
             grid-template-columns: repeat(1, 1fr);
         }
     }
 }
 
 .card {
+    @media screen and (max-width: 680px) {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
     &_modal {
         position: fixed;
         top: 50%;
@@ -30,10 +35,8 @@
 
         @media screen and (max-width: 1024px) {
             max-width: 400px;
-        }
-
-        @media screen and (max-width: 786px) {
-            width: 70%;
+            width: 100%;
+            padding: 0 15px;
         }
     }
 
@@ -48,11 +51,14 @@
         border-radius: 50px;
         transition: transform 0.3s ease;
         display: grid;
-        grid-template-rows: 45% 55%;
+        grid-template-rows: 42% 58%;
 
-        @media screen and (max-width: 570px) {
-            max-width: 250px;
-            margin: 0 auto;
+        @media screen and (max-width: 1160px) {
+            grid-template-rows: 40% 60%;
+        }
+
+        @media screen and (max-width: 680px) {
+            grid-template-rows: 47% 53%;
         }
 
         &:hover {
@@ -65,17 +71,11 @@
             padding: 0;
             display: flex;
             position: relative;
-            border-radius: 50px;
+            border-radius: 10px;
 
             @media screen and (max-width: 1024px) {
                 display: block;
-                width: unset;
-                padding: 35px 35px 10px 35px;
-                border-radius: 30px;
-            }
-
-            @media screen and (max-width: 400px) {
-                padding: 30px 15px 15px 15px;
+                padding: 50px 40px 10px 40px;
             }
         }
     }
@@ -103,64 +103,28 @@
         justify-content: end;
         align-items: center;
     }
-
-    &__cross {
-        width: 25px;
-        height: 2px;
-        cursor: pointer;
-
-        @media screen and (max-width: 1024px) {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-            padding: 5px;
-            border-radius: 50%;
-        }
-    
-        &::after, 
-        &::before {
-            content: "";
-            position: absolute;
-            background-color: #fff;
-            width: 1.5px;
-            height: 15px;
-            -webkit-transition: all 0.5s ease-in-out;
-            -moz-transition: all 0.5s ease-in-out;
-            -o-transition: all 0.5s ease-in-out;
-            -ms-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
-        }
-        
-        &::before {
-            transform: rotate(45deg);
-        }
-        
-        &::after {
-            transform: rotate(-45deg);
-        }
-    }
     
     &__image {
+
+        @media screen and (max-width: 1160px) {
+            max-width: 200px;
+            margin: 0 auto;
+        }
 
         &_modal {
             display: flex;
             align-items: center;;
             flex: 1;
+            padding: 30px 20px;
+
+            @media screen and (max-width: 1024px) {
+                padding: 0;
+            }
 
             img {
                 max-width: 400px;
                 width: 100%;
                 margin: 0 auto;
-                padding: 20px;
-                border-radius: 50px;
-
-                @media screen and (max-width: 1024px) {
-                    padding: 0;
-                }
             }
         }
 
@@ -171,7 +135,11 @@
     }
 
     &__name {
-        padding: 15px 0;
+        padding: 25px 0 15px 0;
+
+        @media screen and (max-width: 680px) {
+            padding: 20px 0 15px 0;
+        }
 
         .card__text {
             font-size: 16px;

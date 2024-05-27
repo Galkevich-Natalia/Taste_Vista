@@ -13,7 +13,7 @@ export function addModal(event) {
           addMenu(cardData, 'modal');
           overlay.style.display = 'block';
           overlay.addEventListener('click', closeModal);
-          body.classList.add('modal-open');
+          body.classList.add('hideScroll');
         });
     } catch (error) {
       throw error;
@@ -28,5 +28,5 @@ export function closeModal() {
 
   card.remove();
   overlay.style.display = 'none';
-  body.classList.remove('modal-open');
+  body.classList.remove('hideScroll');
 }
