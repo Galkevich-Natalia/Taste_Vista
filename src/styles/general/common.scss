@@ -10,18 +10,6 @@ body {
     padding: 0 20px;
 }
 
-.overlaySideBar {
-    display: none;
-    position: fixed;
-    z-index: 20;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
-
 .overlay {
     display: none;
     position: fixed;
@@ -64,40 +52,40 @@ body {
     &::after {
         transform: rotate(-45deg);
     }
-}
 
-.cross_side-bar {
-    position: relative;
-    bottom: 10px;
-
-    &::after, 
-    &::before {
-        height: 18px;
+    &_side-bar {
+        position: relative;
+        bottom: 10px;
+    
+        &::after, 
+        &::before {
+            height: 18px;
+        }
     }
-}
 
-.cross_menu-card {
-    height: 20px;
-
-    @media screen and (max-width: 1024px) {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-        cursor: pointer;
-        padding: 5px;
-        border-radius: 50%;
+    &_menu-card-modal {
+        height: 20px;
+    
+        @media screen and (max-width: 1024px) {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+        }
     }
-}
 
-.cross_checkout-modal {
-    position: relative;
-    bottom: 10px;
-
-    &::after, 
-    &::before {
-        background-color: black;
+    &_checkout-modal {
+        position: relative;
+        bottom: 10px;
+    
+        &::after, 
+        &::before {
+            background-color: black;
+        }
     }
 }

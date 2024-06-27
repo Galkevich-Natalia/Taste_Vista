@@ -91,15 +91,7 @@ export function removeOrderCardByBtnCLose(event) {
     getTotalPrice();
 }
 
-function addMinHeightForOrders() {
-    const orders = document.querySelector('.orders');
-    let heightDisplay = window.innerHeight - 180;
-
-    orders.style.minHeight = heightDisplay + 'px';
-}
-
 document.addEventListener("DOMContentLoaded", () => {
     addDishToOrdersPage();
     getTotalPrice();
-    addMinHeightForOrders();
 })

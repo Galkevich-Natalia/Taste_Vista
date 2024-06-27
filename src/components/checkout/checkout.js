@@ -5,14 +5,16 @@ import { validateForm } from "../validation/validation";
 import { removeItemToStorage } from "../../utils/localStorage";
 
 const checkoutBtnOrder = document.querySelector('.checkout__block-btn');
-const checkoutModalBtnClose = document.querySelector('.checkout__modal-btn');
+const checkoutModalBtnClose = document.querySelector('.cross_checkout-modal');
 
 checkoutBtnOrder.addEventListener('click', getOrder);
 checkoutModalBtnClose.addEventListener('click', closeCheckoutModal);
 
 function getDishesOnCheckoutPage() {
     const dataFromLocalStorage = getOrdersDataFromStorage('Orders');
-    dataFromLocalStorage.forEach((obj) => addItemToCheckoutList(obj));
+    dataFromLocalStorage.forEach((obj) => 
+    addItemToCheckoutList(obj));
+
 }
 
 function getCheckoutTotalPrice() {
