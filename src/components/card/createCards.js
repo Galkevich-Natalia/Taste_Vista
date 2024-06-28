@@ -64,12 +64,12 @@ function crtCardContent(data, type) {
     if (type === "ordinary") {
         cardContent.classList.add("card__content");
         cardContent.append(crtCardName(data, type));
-        data.ingredients !== null && cardContent.append(crtCardIngredients(data));
+        data.ingredients && cardContent.append(crtCardIngredients(data));
         cardContent.append(crtCardFooter(data));
     } else if (type === "modal") {
         cardContent.classList.add("card__content_modal")
         cardContent.append(crtContainerBtnClose(), crtCardName(data, type));
-        data.description !== null && cardContent.append(crtCardDescription(data));
+        data.description && cardContent.append(crtCardDescription(data));
         cardContent.append(crtCardFooter(data));
     }
 
@@ -86,7 +86,7 @@ function crtContainerBtnClose() {
 
 function crtBtnClose() {
     const btnClose = document.createElement('button');
-    btnClose.classList.add('card__cross');
+    btnClose.classList.add('cross', 'cross_menu-card-modal');
     btnClose.addEventListener('click', closeModal);
 
     return btnClose;

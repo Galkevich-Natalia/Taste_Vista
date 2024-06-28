@@ -82,7 +82,6 @@ function validateApartment() {
 
 function messageInvalidInput(messageValue, inputValue) {
     messageValue.textContent = 'Please enter a valid ' + inputValue;
-    messageValue.style.color = "red";
     return false;
 }
 
