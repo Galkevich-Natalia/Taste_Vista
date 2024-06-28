@@ -144,7 +144,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/pages/workingHours.html",
-      filename: "/workingHours.html",
+      filename: "workingHours.html",
       chunks: ["styles", "navigationMenu", "addMinHeightForPage"],
     }),
     new MiniCssExtractPlugin({ filename: "styles.css" }),
