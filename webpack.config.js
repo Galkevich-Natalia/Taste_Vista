@@ -130,7 +130,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/pages/orders.html",
       filename: "orders.html",
-      chunks: ["styles", "navigationMenu", "addMinHeightForPage"],
+      chunks: ["styles", "navigationMenu", "addMinHeightForPage", "orders"],
     }),
     new HtmlWebpackPlugin({
       template: "./src/pages/policy.html",
