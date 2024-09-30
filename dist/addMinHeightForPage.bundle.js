@@ -1,1 +1,0 @@
-(()=>{function e(e){const n=document.querySelector(e);if(!n)return void console.warn(`Element with selector "${e}" not found.`);let o=window.innerHeight-180;n.style.minHeight=o+"px"}document.addEventListener("DOMContentLoaded",(function(){e(".socialMedia"),e(".workingHours"),e(".orders")}))})();
