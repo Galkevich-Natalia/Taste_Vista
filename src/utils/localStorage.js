@@ -2,8 +2,8 @@ export function setOrdersDataToStorage(data) {
     localStorage.setItem('Orders', JSON.stringify(data));
 }
 
-export function getOrdersDataFromStorage() {
-    const orders = localStorage.getItem('Orders');
+export function getOrdersDataFromStorage(key) {
+    const orders = localStorage.getItem(key);
     return JSON.parse(orders);
 }
 
